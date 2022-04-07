@@ -5,6 +5,8 @@ I'm a software developer with a passion for coding and new technologies. I have 
 
 In the meantime? I code. Being a programmer is great because you can basically do everything with just your own skillset. Enjoy my code playground and have fun!
 
+You can also find my works here in a tidier format [johnminelli.it](https://johnminelli.it)
+
 [![johnMinelli's github stats](https://github-readme-stats.vercel.app/api?username=johnMinelli&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
 ## Get to know me better:
