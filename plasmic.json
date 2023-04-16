@@ -1,0 +1,256 @@
+{
+  "platform": "react",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "files",
+    "publicDir": "../../public",
+    "publicUrlPrefix": "/static/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "src/components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": "3.12.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ]
+    },
+    {
+      "projectId": "szjgMQpPpxhmkjnaBvZQJG",
+      "projectApiToken": "xBIsrWHdWZ9kVgFEGUt29LOZPWfm0XidYqRHqPhQXsEjDHevjIbp44nEYMIZ46YOoxrN8anfXjreTkDtFjTA",
+      "projectName": "react-parallax-tilt",
+      "version": "2.12.0",
+      "cssFilePath": "plasmic/react_parallax_tilt/plasmic_react_parallax_tilt.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "PfY466VIuq",
+          "name": "Tilt",
+          "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
+        }
+      ]
+    },
+    {
+      "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+      "projectApiToken": "ofVPuwrTkl8SuAoFL7DPsvX7Qv4aAHDehqr9nrg5R4hFPgM5tUOPn0PrCbRevyyOfl4naDAsLP3xCGky7Q",
+      "projectName": "johnMinelli page",
+      "version": "latest",
+      "cssFilePath": "plasmic/john_minelli_page/plasmic_john_minelli_page.module.css",
+      "components": [
+        {
+          "id": "VuN4Vj5UkyvQa",
+          "name": "Home",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicHome.tsx",
+          "importSpec": {
+            "modulePath": "Home.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicHome.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "qroDzoOns2",
+          "name": "Book",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicBook.tsx",
+          "importSpec": {
+            "modulePath": "Book.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicBook.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "2tWVC6Xhmwx",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "hx5Zt00vBr",
+          "name": "SocialLink",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicSocialLink.tsx",
+          "importSpec": {
+            "modulePath": "SocialLink.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicSocialLink.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        }
+      ],
+      "icons": [
+        {
+          "id": "Amok0_pLidVdv",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "PNrLMBUfVZ-Fj",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Icon2.tsx"
+        },
+        {
+          "id": "r8JayDPRlkYjs",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Icon3.tsx"
+        },
+        {
+          "id": "4_qxU2BrvDZ",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Searchsvg.tsx"
+        },
+        {
+          "id": "MQfOR7idPXy",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "dNovjR86D5",
+          "name": "GithubSvgIcon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__GithubSvg.tsx"
+        },
+        {
+          "id": "67Imrh2ba",
+          "name": "LinkedinIcon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Linkedin.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "9FfEI69E_",
+          "name": "Immagine.png",
+          "filePath": "plasmic/john_minelli_page/images/immaginepng.png"
+        },
+        {
+          "id": "2Mn14dalQv",
+          "name": "Disk",
+          "filePath": "plasmic/john_minelli_page/images/disk.svg"
+        },
+        {
+          "id": "Up_nF59oem",
+          "name": "Reflections",
+          "filePath": "plasmic/john_minelli_page/images/reflections.svg"
+        },
+        {
+          "id": "s_L8eZF8bX",
+          "name": "Disk 2",
+          "filePath": "plasmic/john_minelli_page/images/disk2.svg"
+        },
+        {
+          "id": "Pn-SwQUERp",
+          "name": "Reflections 2",
+          "filePath": "plasmic/john_minelli_page/images/reflections2.svg"
+        },
+        {
+          "id": "xw2MH-rchN",
+          "name": "Disk 3",
+          "filePath": "plasmic/john_minelli_page/images/disk3.svg"
+        },
+        {
+          "id": "1c0bh5V8Bb",
+          "name": "Reflections 3",
+          "filePath": "plasmic/john_minelli_page/images/reflections3.svg"
+        },
+        {
+          "id": "p8gNcOvToO",
+          "name": "Disk 4",
+          "filePath": "plasmic/john_minelli_page/images/disk4.svg"
+        },
+        {
+          "id": "FQQezANf-i",
+          "name": "Reflections 4",
+          "filePath": "plasmic/john_minelli_page/images/reflections4.svg"
+        },
+        {
+          "id": "9N5EJ-4qp5",
+          "name": "Disk 5",
+          "filePath": "plasmic/john_minelli_page/images/disk5.svg"
+        },
+        {
+          "id": "KJkatJg-D9",
+          "name": "Mask group",
+          "filePath": "plasmic/john_minelli_page/images/maskGroup.svg"
+        },
+        {
+          "id": "zH0Lwx2TpX",
+          "name": "github-svgrepo-com.svg",
+          "filePath": "plasmic/john_minelli_page/images/githubSvgrepoComsvg.svg"
+        },
+        {
+          "id": "tQxq5NPiOd",
+          "name": "github-svgrepo-com (1).svg",
+          "filePath": "plasmic/john_minelli_page/images/githubSvgrepoCom1Svg.svg"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "bEhfBQeORa",
+          "name": "PlasmicHead",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "-uWKIv8-Yg",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "943uUhC-MFQSG",
+        "name": "Screen",
+        "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+        "contextFilePath": "plasmic/john_minelli_page/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "cliVersion": "0.1.258",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.258/dist/plasmic.schema.json"
+}
