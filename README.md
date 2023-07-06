@@ -8,6 +8,8 @@ My interest in AI research extends to the study of multijoint embedding space, p
 I also try to keep up with research by participating in ML reading groups and contributing to opensource communities such as [RL communities](https://farama.org/).
 You can find my works here or on [johnminelli.it](https://johnminelli.it) in a tidier format.
 
+[![johnMinelli's github stats](https://github-readme-stats.vercel.app/api?username=johnMinelli&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
+
 ## Get to know me better:
 I've always been told to learn different things because you never know when they might come in handy, so I've gained some experience in many topics and I think this is very helpful in being more flexible in life and in the tech world.
 Over the years I experienced the field of mechanical industry with CNC machines 2.5/3 axes, electrical hobby including components soldering, and play around with Arduino/Adafruit/Raspberry (check out my repositories on IoT, those are part of my thesis for which I collaborated with an Eclipse foundation development team (y)). I found myself very interested in 3D modeling with even basic experiments in Unity3D. Crypto/blockchain follower (just the technology behind it) since early 2016 and supporter of decentralized opensource solutions.
