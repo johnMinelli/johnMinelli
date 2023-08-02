@@ -8,7 +8,7 @@ My interest in AI research extends to the study of multijoint embedding space, p
 I also try to keep up with research by participating in ML reading groups and contributing to opensource communities such as [RL communities](https://farama.org/).
 You can find my works here or on [johnminelli.it](https://johnminelli.it) in a tidier format.
 
-[![johnMinelli's github stats](https://github-readme-stats.vercel.app/api?username=johnMinelli&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
+<!-- [![johnMinelli's github stats](https://github-readme-stats.vercel.app/api?username=johnMinelli&count_private=true)](https://github.com/anuraghazra/github-readme-stats) -->
 
 ## Get to know me better:
 I've always been told to learn different things because you never know when they might come in handy, so I've gained some experience in many topics and I think this is very helpful in being more flexible in life and in the tech world.
