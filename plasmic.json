@@ -39,7 +39,8 @@
           "displayName": "hostless-reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "szjgMQpPpxhmkjnaBvZQJG",
@@ -59,7 +60,8 @@
           "displayName": "hostless-parallax-tilt",
           "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
@@ -135,19 +137,6 @@
           "componentType": "component"
         },
         {
-          "id": "7xOpXosNwe",
-          "name": "Paper1Button",
-          "type": "managed",
-          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
-          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.tsx",
-          "importSpec": {
-            "modulePath": "Paper1Button.tsx"
-          },
-          "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "N0wwUZYvk9",
           "name": "Paper2Button",
           "type": "managed",
@@ -162,14 +151,14 @@
         },
         {
           "id": "DiDoqGTUiD",
-          "name": "Paper2Button2",
+          "name": "Paper1Button",
           "type": "managed",
           "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
-          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPaper2Button2.tsx",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.tsx",
           "importSpec": {
-            "modulePath": "Paper2Button2.tsx"
+            "modulePath": "Paper1Button.tsx"
           },
-          "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper2Button2.module.css",
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -580,7 +569,8 @@
           "displayName": "ContentStackCredentialsProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-content-stack"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

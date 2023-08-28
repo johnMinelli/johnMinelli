@@ -451,15 +451,13 @@
 @media (min-width: 0px) and (max-width: 850px) {
   .projector2 {
     height: 591px;
-    right: 15%;
-    left: 15%;
+    right: 5%;
+    left: 5%;
   }
 }
 @media (min-width: 0px) and (max-width: 450px) {
   .projector2 {
     height: 583px;
-    right: 14.86%;
-    left: 14.62%;
   }
 }
 .timeline {
@@ -475,6 +473,12 @@
   left: 19%;
   right: 19%;
   padding: 8px;
+}
+@media (min-width: 0px) and (max-width: 850px) {
+  .timeline {
+    left: 9%;
+    right: 9%;
+  }
 }
 @media (min-width: 0px) and (max-width: 450px) {
   .timeline {

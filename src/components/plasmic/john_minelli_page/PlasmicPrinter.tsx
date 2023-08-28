@@ -32,7 +32,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Paper2Button2 from "../../Paper2Button2"; // plasmic-import: DiDoqGTUiD/component
+import Paper1Button from "../../Paper1Button"; // plasmic-import: DiDoqGTUiD/component
 import Paper2Button from "../../Paper2Button"; // plasmic-import: N0wwUZYvk9/component
 
 import { useScreenVariants as useScreenVariants_943UUhCMfqsg } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 943uUhC-MFQSG/globalVariant
@@ -72,7 +72,7 @@ export const PlasmicPrinter__ArgProps = new Array<ArgPropType>(
 export type PlasmicPrinter__OverridesType = {
   root?: p.Flex<"div">;
   printer?: p.Flex<typeof p.PlasmicImg>;
-  nvsButton?: p.Flex<typeof Paper2Button2>;
+  nvsButton?: p.Flex<typeof Paper1Button>;
   legButton?: p.Flex<typeof Paper2Button>;
   longerSheet?: p.Flex<typeof p.PlasmicImg>;
   printedArea?: p.Flex<"div">;
@@ -213,7 +213,7 @@ function PlasmicPrinter__RenderFunc(props: {
           }}
         />
 
-        <Paper2Button2
+        <Paper1Button
           data-plasmic-name={"nvsButton"}
           data-plasmic-override={overrides.nvsButton}
           className={classNames("__wab_instance", sty.nvsButton, {
@@ -640,7 +640,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   printer: typeof p.PlasmicImg;
-  nvsButton: typeof Paper2Button2;
+  nvsButton: typeof Paper1Button;
   legButton: typeof Paper2Button;
   longerSheet: typeof p.PlasmicImg;
   printedArea: "div";

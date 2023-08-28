@@ -492,9 +492,20 @@ function PlasmicHome__RenderFunc(props: {
                       sty.timeline1
                     )}
                   >
-                    {
-                      "     May 2023 - Intern researcher in Learning Agents and Robots (LEAR) Team at CYENS (Nicosia, CY) "
-                    }
+                    <React.Fragment>
+                      <React.Fragment>{"     "}</React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"May 2023"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " - Intern researcher in Learning Agents and Robots (LEAR) Team at CYENS (Nicosia, CY) "
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
                   </div>
                   <div
                     data-plasmic-name={"timeline2"}
@@ -505,9 +516,19 @@ function PlasmicHome__RenderFunc(props: {
                       sty.timeline2
                     )}
                   >
-                    {
-                      "Mar 2023 - Ended my MSc in Artificial Intelligence at University of Bologna"
-                    }
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Mar 2023"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " - Ended my MSc in Artificial Intelligence at University of Bologna"
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
                   </div>
                   <div
                     data-plasmic-name={"timeline3"}
@@ -518,9 +539,19 @@ function PlasmicHome__RenderFunc(props: {
                       sty.timeline3
                     )}
                   >
-                    {
-                      "Oct 2022 - Thesis preparation abroad in Machine Intelligence Lab at UCL (London, UK) "
-                    }
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Oct 2022"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " - Thesis preparation abroad in Machine Intelligence Lab at UCL (London, UK) "
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
                   </div>
                   <div
                     data-plasmic-name={"timeline4"}
@@ -531,9 +562,19 @@ function PlasmicHome__RenderFunc(props: {
                       sty.timeline4
                     )}
                   >
-                    {
-                      "Oct 2020 - Started a Master degree in Artificial Intelligence at University of Bologna"
-                    }
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"Oct 2020"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          " - Started a Master degree in Artificial Intelligence at University of Bologna"
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
                   </div>
                 </div>
               ) : null}
