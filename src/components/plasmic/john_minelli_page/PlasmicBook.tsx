@@ -43,6 +43,8 @@ import GithubSvgIcon from "./icons/PlasmicIcon__GithubSvg"; // plasmic-import: d
 import disk59N5Ej4Qp5 from "./images/disk5.svg"; // plasmic-import: 9N5EJ-4qp5/picture
 import maskGroupKJkatJgD9 from "./images/maskGroup.svg"; // plasmic-import: KJkatJg-D9/picture
 
+createPlasmicElementProxy;
+
 export type PlasmicBook__VariantMembers = {
   project:
     | "flatland"
@@ -54,7 +56,6 @@ export type PlasmicBook__VariantMembers = {
     | "envKnob"
     | "twoWaySinth";
 };
-
 export type PlasmicBook__VariantsArgs = {
   project?: SingleChoiceArg<
     | "flatland"
@@ -67,7 +68,6 @@ export type PlasmicBook__VariantsArgs = {
     | "twoWaySinth"
   >;
 };
-
 type VariantPropType = keyof PlasmicBook__VariantsArgs;
 export const PlasmicBook__VariantProps = new Array<VariantPropType>("project");
 
@@ -127,28 +127,20 @@ function PlasmicBook__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
 
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
-  const stateSpecs = React.useMemo(
+
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "project",
@@ -156,7 +148,6 @@ function PlasmicBook__RenderFunc(props: {
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.project
       },
-
       {
         path: "textInput.value",
         type: "private",
@@ -164,10 +155,14 @@ function PlasmicBook__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       }
     ],
-
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
   const [isRootFocusWithin, triggerRootFocusWithinProps] = useTrigger(
@@ -471,7 +466,9 @@ function PlasmicBook__RenderFunc(props: {
                     (e => e.target?.value).apply(null, eventArgs)
                   );
                 }}
-                value={p.generateStateValueProp($state, ["textInput", "value"])}
+                value={
+                  p.generateStateValueProp($state, ["textInput", "value"]) ?? ""
+                }
               />
             ) : null}
             {(triggers.focusWithin_root ? true : true) ? (
@@ -1111,7 +1108,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   frontCover: "div";
@@ -1146,15 +1143,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicBook__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicBook__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicBook__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicBook__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

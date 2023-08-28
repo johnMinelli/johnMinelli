@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -36,6 +36,7 @@
         {
           "id": "R6s1FdhksG",
           "name": "Reveal",
+          "displayName": "hostless-reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ]
@@ -55,6 +56,7 @@
         {
           "id": "PfY466VIuq",
           "name": "Tilt",
+          "displayName": "hostless-parallax-tilt",
           "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
         }
       ]
@@ -118,6 +120,58 @@
           "cssFilePath": "plasmic/john_minelli_page/PlasmicSocialLink.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "ktUZWyedPGv",
+          "name": "Printer",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPrinter.tsx",
+          "importSpec": {
+            "modulePath": "Printer.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicPrinter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "7xOpXosNwe",
+          "name": "Paper1Button",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.tsx",
+          "importSpec": {
+            "modulePath": "Paper1Button.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "N0wwUZYvk9",
+          "name": "Paper2Button",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPaper2Button.tsx",
+          "importSpec": {
+            "modulePath": "Paper2Button.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper2Button.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "DiDoqGTUiD",
+          "name": "Paper2Button2",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicPaper2Button2.tsx",
+          "importSpec": {
+            "modulePath": "Paper2Button2.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper2Button2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -155,6 +209,106 @@
           "id": "67Imrh2ba",
           "name": "LinkedinIcon",
           "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Linkedin.tsx"
+        },
+        {
+          "id": "-qc32TnM-nH",
+          "name": "Icon4Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Icon4.tsx"
+        },
+        {
+          "id": "TmkHknhpq",
+          "name": "Vector14Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector14.tsx"
+        },
+        {
+          "id": "vzMPlCD7WG",
+          "name": "Vector16Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector16.tsx"
+        },
+        {
+          "id": "KuUdQXtW5Z",
+          "name": "Vector17Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector17.tsx"
+        },
+        {
+          "id": "C39nd31LWr",
+          "name": "Vector18Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector18.tsx"
+        },
+        {
+          "id": "11dRB3T7lr",
+          "name": "Vector19Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector19.tsx"
+        },
+        {
+          "id": "eLFd47-nlA",
+          "name": "Vector20Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector20.tsx"
+        },
+        {
+          "id": "s5AeI8nxi1",
+          "name": "Vector21Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector21.tsx"
+        },
+        {
+          "id": "h462JF4Tbe",
+          "name": "Vector22Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector22.tsx"
+        },
+        {
+          "id": "h3NRibcMT",
+          "name": "Vector23Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector23.tsx"
+        },
+        {
+          "id": "fW5j-3Vqad",
+          "name": "Vector24Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector24.tsx"
+        },
+        {
+          "id": "wXhrpanZ_1",
+          "name": "Vector25Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector25.tsx"
+        },
+        {
+          "id": "CI025BdZPb",
+          "name": "Vector26Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector26.tsx"
+        },
+        {
+          "id": "WGajEhxxAc",
+          "name": "Vector27Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector27.tsx"
+        },
+        {
+          "id": "L0gtCNXBM8",
+          "name": "Line41Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Line41.tsx"
+        },
+        {
+          "id": "CgDr0Ll_y3",
+          "name": "Line42Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Line42.tsx"
+        },
+        {
+          "id": "kY5JJ6PR4",
+          "name": "Vector29Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector29.tsx"
+        },
+        {
+          "id": "zf_DHnfyXP",
+          "name": "Vector28Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Vector28.tsx"
+        },
+        {
+          "id": "gu_fjzgP1W",
+          "name": "Line43Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Line43.tsx"
+        },
+        {
+          "id": "7EoLVG_kCR",
+          "name": "Line44Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Line44.tsx"
         }
       ],
       "images": [
@@ -222,20 +376,209 @@
           "id": "tQxq5NPiOd",
           "name": "github-svgrepo-com (1).svg",
           "filePath": "plasmic/john_minelli_page/images/githubSvgrepoCom1Svg.svg"
+        },
+        {
+          "id": "rqSlXDSwk",
+          "name": "image",
+          "filePath": "plasmic/john_minelli_page/images/image.svg"
+        },
+        {
+          "id": "3DNxZgayuy",
+          "name": "image 2",
+          "filePath": "plasmic/john_minelli_page/images/image2.svg"
+        },
+        {
+          "id": "Xte0cJ39Jx",
+          "name": "image 3",
+          "filePath": "plasmic/john_minelli_page/images/image3.svg"
+        },
+        {
+          "id": "LIybeBghK",
+          "name": "image 4",
+          "filePath": "plasmic/john_minelli_page/images/image4.svg"
+        },
+        {
+          "id": "VZjzdlL9at",
+          "name": "image 5",
+          "filePath": "plasmic/john_minelli_page/images/image5.svg"
+        },
+        {
+          "id": "PRqzJ0OXzn",
+          "name": "image 6",
+          "filePath": "plasmic/john_minelli_page/images/image6.svg"
+        },
+        {
+          "id": "nsqrABbxi",
+          "name": "Eye2",
+          "filePath": "plasmic/john_minelli_page/images/eye2.svg"
+        },
+        {
+          "id": "Q8HEUzOhF-",
+          "name": "Eye1",
+          "filePath": "plasmic/john_minelli_page/images/eye1.svg"
+        },
+        {
+          "id": "q67VDisC2",
+          "name": "Eye2 2",
+          "filePath": "plasmic/john_minelli_page/images/eye22.svg"
+        },
+        {
+          "id": "fWRa8FmPW",
+          "name": "Eye2 3",
+          "filePath": "plasmic/john_minelli_page/images/eye23.svg"
+        },
+        {
+          "id": "TSRfw8Efl",
+          "name": "image 7",
+          "filePath": "plasmic/john_minelli_page/images/image7.png"
+        },
+        {
+          "id": "TwfgTT-7w",
+          "name": "image 8",
+          "filePath": "plasmic/john_minelli_page/images/image8.svg"
+        },
+        {
+          "id": "ZQWDAsYBq",
+          "name": "image 9",
+          "filePath": "plasmic/john_minelli_page/images/image9.png"
+        },
+        {
+          "id": "BEG4pkDLy",
+          "name": "image 10",
+          "filePath": "plasmic/john_minelli_page/images/image10.svg"
+        },
+        {
+          "id": "ZyKS67SBE",
+          "name": "r1.png",
+          "filePath": "plasmic/john_minelli_page/images/r1Png.png"
+        },
+        {
+          "id": "PuqjQcwy0",
+          "name": "r2.png",
+          "filePath": "plasmic/john_minelli_page/images/r2Png.png"
+        },
+        {
+          "id": "LfnpAOA8q",
+          "name": "Eye2 4",
+          "filePath": "plasmic/john_minelli_page/images/eye24.svg"
+        },
+        {
+          "id": "ScqwC7NnXu",
+          "name": "Eye1 2",
+          "filePath": "plasmic/john_minelli_page/images/eye12.svg"
+        },
+        {
+          "id": "fHOvt2ogf",
+          "name": "Eye2 5",
+          "filePath": "plasmic/john_minelli_page/images/eye25.svg"
+        },
+        {
+          "id": "40EqlHVdw5",
+          "name": "Eye1 3",
+          "filePath": "plasmic/john_minelli_page/images/eye13.svg"
+        },
+        {
+          "id": "Cvw5aPzow",
+          "name": "Eye2 6",
+          "filePath": "plasmic/john_minelli_page/images/eye26.svg"
+        },
+        {
+          "id": "PfjR3x9Bba",
+          "name": "Eye1 4",
+          "filePath": "plasmic/john_minelli_page/images/eye14.svg"
+        },
+        {
+          "id": "D181GzWxu",
+          "name": "Eye2 7",
+          "filePath": "plasmic/john_minelli_page/images/eye27.svg"
+        },
+        {
+          "id": "8cjIHA__Od",
+          "name": "Eye1 5",
+          "filePath": "plasmic/john_minelli_page/images/eye15.svg"
+        },
+        {
+          "id": "fTwf5-1Q1",
+          "name": "Eye1 6",
+          "filePath": "plasmic/john_minelli_page/images/eye16.svg"
+        },
+        {
+          "id": "UQ17Hdifr",
+          "name": "Eye2 8",
+          "filePath": "plasmic/john_minelli_page/images/eye28.svg"
+        },
+        {
+          "id": "w57xn4C9L",
+          "name": "Eye2 9",
+          "filePath": "plasmic/john_minelli_page/images/eye29.svg"
+        },
+        {
+          "id": "K2AEXTHXy",
+          "name": "eyes 3",
+          "filePath": "plasmic/john_minelli_page/images/eyes3.png"
+        },
+        {
+          "id": "9WqwpCpLLb",
+          "name": "eyes 2",
+          "filePath": "plasmic/john_minelli_page/images/eyes2.svg"
+        },
+        {
+          "id": "RJtYHEk2h",
+          "name": "eyes 4",
+          "filePath": "plasmic/john_minelli_page/images/eyes4.svg"
+        },
+        {
+          "id": "lWLOdTk2s",
+          "name": "Eye1.png",
+          "filePath": "plasmic/john_minelli_page/images/eye1Png.png"
         }
       ],
       "indirect": false,
-      "globalContextsFilePath": "",
+      "globalContextsFilePath": "plasmic/john_minelli_page/PlasmicGlobalContextsProvider.tsx",
       "codeComponents": [
         {
           "id": "bEhfBQeORa",
           "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
           "componentImportPath": "@plasmicapp/react-web"
         },
         {
           "id": "-uWKIv8-Yg",
           "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ]
+    },
+    {
+      "projectId": "2vr9hQFY2mN9rEqhWxcPmu",
+      "projectApiToken": "MrA7yDxOZDnZONRQczt8LXt6S338N2xidVnZ4QBedOtLWF3dyOXM6nZYhpJx1XV1envcLM7IYRKFs1Aqsw",
+      "projectName": "plasmic-content-stack",
+      "version": "1.20.0",
+      "cssFilePath": "plasmic/plasmic_content_stack/plasmic_plasmic_content_stack.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/plasmic_content_stack/PlasmicGlobalContextsProvider.tsx",
+      "codeComponents": [
+        {
+          "id": "CXh6zJo5Lcp",
+          "name": "ContentStackFetcher",
+          "displayName": "ContentStackFetcher",
+          "componentImportPath": "@plasmicpkgs/plasmic-content-stack"
+        },
+        {
+          "id": "4n_wKQ7yxp_",
+          "name": "ContentStackField",
+          "displayName": "ContentStackField",
+          "componentImportPath": "@plasmicpkgs/plasmic-content-stack"
+        },
+        {
+          "id": "bk5RNde8kLM",
+          "name": "ContentStackCredentialsProvider",
+          "displayName": "ContentStackCredentialsProvider",
+          "componentImportPath": "@plasmicpkgs/plasmic-content-stack"
         }
       ]
     }
@@ -251,6 +594,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.258",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.258/dist/plasmic.schema.json"
+  "cliVersion": "0.1.307",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.307/dist/plasmic.schema.json"
 }

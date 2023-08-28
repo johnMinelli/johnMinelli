@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.258",
+    "@plasmicapp/cli": "^0.1.307",
     "@plasmicapp/host": "^1.0.35",
     "@plasmicapp/loader-react": "^1.0.92",
-    "@plasmicapp/react-web": "^0.2.194",
+    "@plasmicapp/react-web": "^0.2.248",
+    "@plasmicpkgs/plasmic-content-stack": "^0.0.113",
     "@plasmicpkgs/react-awesome-reveal": "^3.8.35",
     "@plasmicpkgs/react-parallax-tilt": "0.0.33",
     "@testing-library/jest-dom": "^5.16.4",

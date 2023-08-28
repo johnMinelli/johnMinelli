@@ -42,14 +42,14 @@ import GithubSvgIcon from "./icons/PlasmicIcon__GithubSvg"; // plasmic-import: d
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Amok0_pLidVdv/icon
 import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: 67Imrh2ba/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicSocialLink__VariantMembers = {
   social: "git" | "twitter" | "linkedin";
 };
-
 export type PlasmicSocialLink__VariantsArgs = {
   social?: SingleChoiceArg<"git" | "twitter" | "linkedin">;
 };
-
 type VariantPropType = keyof PlasmicSocialLink__VariantsArgs;
 export const PlasmicSocialLink__VariantProps = new Array<VariantPropType>(
   "social"
@@ -84,28 +84,20 @@ function PlasmicSocialLink__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
 
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
-  const stateSpecs = React.useMemo(
+
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "social",
@@ -114,10 +106,14 @@ function PlasmicSocialLink__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.social
       }
     ],
-
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   return (
     <a
@@ -206,7 +202,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "a";
 };
@@ -223,15 +219,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicSocialLink__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicSocialLink__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicSocialLink__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicSocialLink__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

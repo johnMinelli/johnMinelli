@@ -34,6 +34,7 @@ import {
 } from "@plasmicapp/react-web";
 import SocialLink from "../../SocialLink"; // plasmic-import: hx5Zt00vBr/component
 import Book from "../../Book"; // plasmic-import: qroDzoOns2/component
+import Printer from "../../Printer"; // plasmic-import: ktUZWyedPGv/component
 
 import { useScreenVariants as useScreenVariants_943UUhCMfqsg } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 943uUhC-MFQSG/globalVariant
 
@@ -43,9 +44,12 @@ import projectcss from "./plasmic_john_minelli_page.module.css"; // plasmic-impo
 import sty from "./PlasmicHome.module.css"; // plasmic-import: VuN4Vj5UkyvQa/css
 
 import immaginepng9FfEi69E from "./images/immaginepng.png"; // plasmic-import: 9FfEI69E_/picture
+import image23DNxZgayuy from "./images/image2.svg"; // plasmic-import: 3DNxZgayuy/picture
+import githubSvgrepoCom1SvgTQxq5NPiOd from "./images/githubSvgrepoCom1Svg.svg"; // plasmic-import: tQxq5NPiOd/picture
+
+createPlasmicElementProxy;
 
 export type PlasmicHome__VariantMembers = {};
-
 export type PlasmicHome__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHome__VariantsArgs;
 export const PlasmicHome__VariantProps = new Array<VariantPropType>();
@@ -58,6 +62,15 @@ export type PlasmicHome__OverridesType = {
   root?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
   description?: p.Flex<"div">;
+  section12?: p.Flex<"div">;
+  printer?: p.Flex<typeof Printer>;
+  section3?: p.Flex<"div">;
+  projector2?: p.Flex<typeof p.PlasmicImg>;
+  timeline?: p.Flex<"div">;
+  timeline1?: p.Flex<"div">;
+  timeline2?: p.Flex<"div">;
+  timeline3?: p.Flex<"div">;
+  timeline4?: p.Flex<"div">;
 };
 
 export interface DefaultHomeProps {
@@ -80,27 +93,42 @@ function PlasmicHome__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
 
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-  const [$queries, setDollarQueries] = React.useState({});
+
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "printer.variable",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "designer",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants_943UUhCMfqsg()
@@ -108,8 +136,6 @@ function PlasmicHome__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      {}
-
       <div className={projectcss.plasmic_page_wrapper}>
         <div
           data-plasmic-name={"root"}
@@ -125,6 +151,35 @@ function PlasmicHome__RenderFunc(props: {
             sty.root
           )}
         >
+          {(
+            hasVariant(globalVariants, "screen", "tablet")
+              ? true
+              : hasVariant(globalVariants, "screen", "laptop")
+              ? true
+              : (() => {
+                  try {
+                    return $state.designer;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })()
+          ) ? (
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__fYj1D
+              )}
+            >
+              {'"Definitely not a designer!"'}
+            </div>
+          ) : null}
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__ozs9H)}>
               <p.PlasmicImg
@@ -147,6 +202,72 @@ function PlasmicHome__RenderFunc(props: {
                     : ("50%" as const)
                 }
                 loading={"lazy" as const}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["updateVariable"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          variable: __wrapUserFunction(
+                            {
+                              type: "InteractionArgLoc",
+                              actionName: "updateVariable",
+                              interactionUuid: "DEsdtQGT9",
+                              componentUuid: "VuN4Vj5UkyvQa",
+                              argName: "variable"
+                            },
+                            () => ({
+                              objRoot: $state,
+                              variablePath: ["designer"]
+                            })
+                          ),
+                          operation: __wrapUserFunction(
+                            {
+                              type: "InteractionArgLoc",
+                              actionName: "updateVariable",
+                              interactionUuid: "DEsdtQGT9",
+                              componentUuid: "VuN4Vj5UkyvQa",
+                              argName: "operation"
+                            },
+                            () => 4
+                          )
+                        };
+                        return __wrapUserFunction(
+                          {
+                            type: "InteractionLoc",
+                            actionName: "updateVariable",
+                            interactionUuid: "DEsdtQGT9",
+                            componentUuid: "VuN4Vj5UkyvQa"
+                          },
+                          () =>
+                            (({ variable, value, startIndex, deleteCount }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = p.get(objRoot, variablePath);
+                              p.set(objRoot, variablePath, !oldValue);
+                              return !oldValue;
+                            })?.apply(null, [actionArgs]),
+                          actionArgs
+                        );
+                      })()
+                    : undefined;
+                  if (
+                    typeof $steps["updateVariable"] === "object" &&
+                    typeof $steps["updateVariable"].then === "function"
+                  ) {
+                    $steps["updateVariable"] = await __wrapUserPromise(
+                      {
+                        type: "InteractionLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "DEsdtQGT9",
+                        componentUuid: "VuN4Vj5UkyvQa"
+                      },
+                      $steps["updateVariable"]
+                    );
+                  }
+                }}
                 src={{
                   src: immaginepng9FfEi69E,
                   fullWidth: 640,
@@ -255,50 +376,169 @@ function PlasmicHome__RenderFunc(props: {
             )}
           >
             {
-              "I’m a developer, computer scientist, and machine learning engineer. As best I can, I want to use my skills to build a better world.\n\nThis is a page for quick access to my projects, you can have a look around if you’d like 😄"
+              "I\u2019m a developer, computer scientist, and machine learning engineer. As best I can, I want to use my skills to build a better world.\n\nThis is a page for quick access to my projects, you can have a look around if you\u2019d like \ud83d\ude04"
             }
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__fl3Rq)}>
-            <Book
-              className={classNames("__wab_instance", sty.book__v76TD)}
-              project={"coinshoarder" as const}
-            />
+          {true ? (
+            <div
+              data-plasmic-name={"section12"}
+              data-plasmic-override={overrides.section12}
+              className={classNames(projectcss.all, sty.section12)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__fl3Rq)}>
+                <Book
+                  className={classNames("__wab_instance", sty.book__v76TD)}
+                  project={"coinshoarder" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book__rxsbp)}
-              project={"yaeOs" as const}
-            />
+                <Book
+                  className={classNames("__wab_instance", sty.book__rxsbp)}
+                  project={"yaeOs" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book__ga7Tw)}
-              project={"puzzleSolver" as const}
-            />
+                <Book
+                  className={classNames("__wab_instance", sty.book__ga7Tw)}
+                  project={"puzzleSolver" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book___4Ii8V)}
-              project={"movingObject" as const}
-            />
+                <Book
+                  className={classNames("__wab_instance", sty.book___4Ii8V)}
+                  project={"movingObject" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book__fu3V)}
-              project={"flatland" as const}
-            />
+                <Book
+                  className={classNames("__wab_instance", sty.book__fu3V)}
+                  project={"flatland" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book__c39Iw)}
-              project={"coRec" as const}
-            />
+                <Book
+                  className={classNames("__wab_instance", sty.book__c39Iw)}
+                  project={"coRec" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book__xo8Ug)}
-              project={"envKnob" as const}
-            />
+                <Book
+                  className={classNames("__wab_instance", sty.book__xo8Ug)}
+                  project={"envKnob" as const}
+                />
 
-            <Book
-              className={classNames("__wab_instance", sty.book__p93Af)}
-              project={"twoWaySinth" as const}
-            />
-          </div>
+                <Book
+                  className={classNames("__wab_instance", sty.book__p93Af)}
+                  project={"twoWaySinth" as const}
+                />
+              </div>
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__prPw)}>
+                  <Printer
+                    data-plasmic-name={"printer"}
+                    data-plasmic-override={overrides.printer}
+                    className={classNames("__wab_instance", sty.printer)}
+                    onVariableChange={p.generateStateOnChangeProp($state, [
+                      "printer",
+                      "variable"
+                    ])}
+                    variable={p.generateStateValueProp($state, [
+                      "printer",
+                      "variable"
+                    ])}
+                  />
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+          {true ? (
+            <div
+              data-plasmic-name={"section3"}
+              data-plasmic-override={overrides.section3}
+              className={classNames(projectcss.all, sty.section3)}
+            >
+              <p.PlasmicImg
+                data-plasmic-name={"projector2"}
+                data-plasmic-override={overrides.projector2}
+                alt={""}
+                className={classNames(sty.projector2)}
+                displayHeight={
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? ("583px" as const)
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? ("591px" as const)
+                    : ("auto" as const)
+                }
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: image23DNxZgayuy,
+                  fullWidth: 173,
+                  fullHeight: 150,
+                  aspectRatio: 1.15015
+                }}
+              />
+
+              {true ? (
+                <div
+                  data-plasmic-name={"timeline"}
+                  data-plasmic-override={overrides.timeline}
+                  className={classNames(projectcss.all, sty.timeline)}
+                >
+                  <div
+                    data-plasmic-name={"timeline1"}
+                    data-plasmic-override={overrides.timeline1}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.timeline1
+                    )}
+                  >
+                    {
+                      "     May 2023 - Intern researcher in Learning Agents and Robots (LEAR) Team at CYENS (Nicosia, CY) "
+                    }
+                  </div>
+                  <div
+                    data-plasmic-name={"timeline2"}
+                    data-plasmic-override={overrides.timeline2}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.timeline2
+                    )}
+                  >
+                    {
+                      "Mar 2023 - Ended my MSc in Artificial Intelligence at University of Bologna"
+                    }
+                  </div>
+                  <div
+                    data-plasmic-name={"timeline3"}
+                    data-plasmic-override={overrides.timeline3}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.timeline3
+                    )}
+                  >
+                    {
+                      "Oct 2022 - Thesis preparation abroad in Machine Intelligence Lab at UCL (London, UK) "
+                    }
+                  </div>
+                  <div
+                    data-plasmic-name={"timeline4"}
+                    data-plasmic-override={overrides.timeline4}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.timeline4
+                    )}
+                  >
+                    {
+                      "Oct 2020 - Started a Master degree in Artificial Intelligence at University of Bologna"
+                    }
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -306,17 +546,56 @@ function PlasmicHome__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "description"],
+  root: [
+    "root",
+    "img",
+    "description",
+    "section12",
+    "printer",
+    "section3",
+    "projector2",
+    "timeline",
+    "timeline1",
+    "timeline2",
+    "timeline3",
+    "timeline4"
+  ],
   img: ["img"],
-  description: ["description"]
+  description: ["description"],
+  section12: ["section12", "printer"],
+  printer: ["printer"],
+  section3: [
+    "section3",
+    "projector2",
+    "timeline",
+    "timeline1",
+    "timeline2",
+    "timeline3",
+    "timeline4"
+  ],
+  projector2: ["projector2"],
+  timeline: ["timeline", "timeline1", "timeline2", "timeline3", "timeline4"],
+  timeline1: ["timeline1"],
+  timeline2: ["timeline2"],
+  timeline3: ["timeline3"],
+  timeline4: ["timeline4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;
   description: "div";
+  section12: "div";
+  printer: typeof Printer;
+  section3: "div";
+  projector2: typeof p.PlasmicImg;
+  timeline: "div";
+  timeline1: "div";
+  timeline2: "div";
+  timeline3: "div";
+  timeline4: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -331,15 +610,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicHome__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicHome__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicHome__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicHome__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -381,6 +660,15 @@ export const PlasmicHome = Object.assign(
     // Helper components rendering sub-elements
     img: makeNodeComponent("img"),
     description: makeNodeComponent("description"),
+    section12: makeNodeComponent("section12"),
+    printer: makeNodeComponent("printer"),
+    section3: makeNodeComponent("section3"),
+    projector2: makeNodeComponent("projector2"),
+    timeline: makeNodeComponent("timeline"),
+    timeline1: makeNodeComponent("timeline1"),
+    timeline2: makeNodeComponent("timeline2"),
+    timeline3: makeNodeComponent("timeline3"),
+    timeline4: makeNodeComponent("timeline4"),
 
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,

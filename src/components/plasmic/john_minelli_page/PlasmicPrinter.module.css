@@ -1,0 +1,249 @@
+.root {
+  display: block;
+  width: 600px;
+  position: relative;
+  background: none;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  justify-self: flex-start;
+  height: 300px;
+  -webkit-transition-property: all;
+  -webkit-transition-timing-function: linear;
+  -webkit-transition-duration: 0.5s;
+}
+@media (max-width: 1280px) {
+  .root {
+    width: 440px;
+    height: 220px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .root {
+    height: 158px;
+    width: 100%;
+    justify-self: flex-start;
+    max-width: 320px;
+    min-width: 0;
+  }
+}
+.printer {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.printer > picture > img {
+  object-fit: cover;
+}
+.printer > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+@media (max-width: 1280px) {
+  .printer {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .printer {
+    height: 158px;
+    width: 320px;
+  }
+}
+.nvsButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: absolute;
+  left: 163px;
+  top: 264px;
+}
+@media (max-width: 1280px) {
+  .nvsButton:global(.__wab_instance) {
+    top: 193px;
+    left: 119px;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .nvsButton:global(.__wab_instance) {
+    top: 140px;
+    left: 87px;
+    width: 14px;
+    height: 14px;
+  }
+}
+.legButton:global(.__wab_instance) {
+  max-width: 100%;
+  position: absolute;
+  left: 223px;
+  top: 269px;
+  height: 18px;
+  width: 26px;
+  right: 351px;
+}
+@media (max-width: 1280px) {
+  .legButton:global(.__wab_instance) {
+    top: 197px;
+    left: 162px;
+    width: 20px;
+    height: 15px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .legButton:global(.__wab_instance) {
+    left: 117px;
+    top: 141px;
+    width: 16px;
+    height: 11px;
+  }
+}
+.longerSheet {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  left: 33px;
+  top: -80px;
+  height: 102px;
+  width: auto;
+  right: 56px;
+  display: none !important;
+}
+.longerSheet > picture > img {
+  object-fit: cover;
+}
+.longerSheet > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .longerSheet {
+    display: block !important;
+  }
+}
+.printedArea {
+  display: block;
+  position: absolute;
+  width: auto;
+  height: 70px;
+  max-width: 100%;
+  top: 6px;
+  left: 134px;
+  right: 152px;
+  padding: 0px;
+}
+@media (max-width: 1280px) {
+  .printedArea {
+    height: 52px;
+    width: 228px;
+    top: 3px;
+    left: 100px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .printedArea {
+    left: 69px;
+    top: -79px;
+    height: 81px;
+    width: 165px;
+    padding-right: 3px;
+  }
+}
+.text {
+  transform: skewX(-5deg) skewY(0deg);
+  color: #333333;
+  font-family: "Courier Prime";
+  font-size: 16px;
+  font-weight: 900;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: auto;
+  right: 10%;
+  height: auto;
+  bottom: 5.5%;
+  display: none;
+}
+@media (max-width: 1280px) {
+  .text {
+    font-size: 13px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .text {
+    bottom: 26.73%;
+    transform: skewX(-8deg) skewY(0deg);
+    font-size: 12px;
+  }
+}
+.textprintedPapers_nvs {
+  display: block;
+}
+.textprintedPapers_leggedLocomotion {
+  display: block;
+}
+.img {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  left: 83%;
+  top: 62%;
+  width: 39px;
+  filter: grayscale(100%);
+  cursor: pointer;
+  transform: skewX(-4deg) skewY(0deg);
+  backdrop-filter: none;
+  display: none !important;
+  -webkit-backdrop-filter: none;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .img {
+    left: 26%;
+    top: 122%;
+  }
+}
+.imgprintedPapers_nvs {
+  display: block !important;
+}
+.sheetWheel {
+  display: block;
+  position: absolute;
+  width: auto;
+  height: 34px;
+  max-width: 100%;
+  left: 526px;
+  top: 108px;
+  margin-right: 0px;
+  cursor: pointer;
+  right: 61px;
+  padding: 0px;
+}
+@media (max-width: 1280px) {
+  .sheetWheel {
+    left: 386px;
+    top: 80px;
+    height: 25px;
+    margin-right: 0px;
+    width: 9px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .sheetWheel {
+    left: 280px;
+    top: 57px;
+    width: 8px;
+    height: 18px;
+    right: 32px;
+  }
+}
