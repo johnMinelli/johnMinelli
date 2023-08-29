@@ -78,6 +78,7 @@ export type PlasmicPrinter__OverridesType = {
   printedArea?: p.Flex<"div">;
   text?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
+  link?: p.Flex<"a">;
   sheetWheel?: p.Flex<"div">;
 };
 
@@ -476,58 +477,30 @@ function PlasmicPrinter__RenderFunc(props: {
                 displayMinWidth={"0" as const}
                 displayWidth={"39px" as const}
                 loading={"lazy" as const}
-                onClick={async event => {
-                  const $steps = {};
-                  $steps["goToGoogleit"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          destination: __wrapUserFunction(
-                            {
-                              type: "InteractionArgLoc",
-                              actionName: "navigation",
-                              interactionUuid: "Lf8sgBnuj",
-                              componentUuid: "ktUZWyedPGv",
-                              argName: "destination"
-                            },
-                            () => "google.it"
-                          )
-                        };
-                        return __wrapUserFunction(
-                          {
-                            type: "InteractionLoc",
-                            actionName: "navigation",
-                            interactionUuid: "Lf8sgBnuj",
-                            componentUuid: "ktUZWyedPGv"
-                          },
-                          () =>
-                            (({ destination }) => {
-                              location.assign(destination);
-                            })?.apply(null, [actionArgs]),
-                          actionArgs
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    typeof $steps["goToGoogleit"] === "object" &&
-                    typeof $steps["goToGoogleit"].then === "function"
-                  ) {
-                    $steps["goToGoogleit"] = await __wrapUserPromise(
-                      {
-                        type: "InteractionLoc",
-                        actionName: "navigation",
-                        interactionUuid: "Lf8sgBnuj",
-                        componentUuid: "ktUZWyedPGv"
-                      },
-                      $steps["goToGoogleit"]
-                    );
-                  }
-                }}
                 src={{
                   src: image8TwfgTt7W,
                   fullWidth: 300,
                   fullHeight: 135,
                   aspectRatio: 2.222644
                 }}
+              />
+            ) : null}
+            {(hasVariant($state, "printedPapers", "nvs") ? true : true) ? (
+              <a
+                data-plasmic-name={"link"}
+                data-plasmic-override={overrides.link}
+                className={classNames(projectcss.all, projectcss.a, sty.link, {
+                  [sty.linkprintedPapers_nvs]: hasVariant(
+                    $state,
+                    "printedPapers",
+                    "nvs"
+                  )
+                })}
+                href={"https://arxiv.org/abs/2308.14108" as const}
+                onClick={async event => {
+                  const $steps = {};
+                }}
+                target={"_blank" as const}
               />
             ) : null}
           </div>
@@ -623,15 +596,17 @@ const PlasmicDescendants = {
     "printedArea",
     "text",
     "img",
+    "link",
     "sheetWheel"
   ],
   printer: ["printer"],
   nvsButton: ["nvsButton"],
   legButton: ["legButton"],
   longerSheet: ["longerSheet"],
-  printedArea: ["printedArea", "text", "img"],
+  printedArea: ["printedArea", "text", "img", "link"],
   text: ["text"],
   img: ["img"],
+  link: ["link"],
   sheetWheel: ["sheetWheel"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -646,6 +621,7 @@ type NodeDefaultElementType = {
   printedArea: "div";
   text: "div";
   img: typeof p.PlasmicImg;
+  link: "a";
   sheetWheel: "div";
 };
 
@@ -716,6 +692,7 @@ export const PlasmicPrinter = Object.assign(
     printedArea: makeNodeComponent("printedArea"),
     text: makeNodeComponent("text"),
     img: makeNodeComponent("img"),
+    link: makeNodeComponent("link"),
     sheetWheel: makeNodeComponent("sheetWheel"),
 
     // Metadata about props expected for PlasmicPrinter

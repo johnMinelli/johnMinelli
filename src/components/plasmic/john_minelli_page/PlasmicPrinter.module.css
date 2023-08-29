@@ -167,6 +167,7 @@
   right: 10%;
   height: auto;
   bottom: 5.5%;
+  padding-right: 0px;
   display: none;
 }
 @media (max-width: 1280px) {
@@ -195,7 +196,6 @@
   top: 62%;
   width: 39px;
   filter: grayscale(100%);
-  cursor: pointer;
   transform: skewX(-4deg) skewY(0deg);
   backdrop-filter: none;
   display: none !important;
@@ -215,6 +215,24 @@
 }
 .imgprintedPapers_nvs {
   display: block !important;
+}
+.link {
+  position: absolute;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 39px;
+  height: 10px;
+  max-width: 100%;
+  left: 260px;
+  top: 48px;
+  margin-right: 0px;
+  cursor: pointer;
+  display: none;
+  padding: 0px;
+}
+.linkprintedPapers_nvs {
+  display: flex;
 }
 .sheetWheel {
   display: block;
