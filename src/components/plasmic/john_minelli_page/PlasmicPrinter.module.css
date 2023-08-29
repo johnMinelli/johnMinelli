@@ -211,6 +211,7 @@
   .img {
     left: 26%;
     top: 122%;
+    display: none !important;
   }
 }
 .imgprintedPapers_nvs {
@@ -224,12 +225,19 @@
   width: 39px;
   height: 10px;
   max-width: 100%;
-  left: 260px;
-  top: 48px;
+  left: 190px;
+  top: 37px;
   margin-right: 0px;
   cursor: pointer;
   display: none;
   padding: 0px;
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .link {
+    left: 43px;
+    top: 104px;
+    display: none;
+  }
 }
 .linkprintedPapers_nvs {
   display: flex;

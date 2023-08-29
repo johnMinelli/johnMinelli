@@ -458,7 +458,13 @@ function PlasmicPrinter__RenderFunc(props: {
                   : ""}
               </div>
             ) : null}
-            {(hasVariant($state, "printedPapers", "nvs") ? true : true) ? (
+            {(
+              hasVariant($state, "printedPapers", "nvs")
+                ? true
+                : hasVariant(globalVariants, "screen", "mobileOnly")
+                ? true
+                : true
+            ) ? (
               <p.PlasmicImg
                 data-plasmic-name={"img"}
                 data-plasmic-override={overrides.img}
@@ -485,7 +491,13 @@ function PlasmicPrinter__RenderFunc(props: {
                 }}
               />
             ) : null}
-            {(hasVariant($state, "printedPapers", "nvs") ? true : true) ? (
+            {(
+              hasVariant($state, "printedPapers", "nvs")
+                ? true
+                : hasVariant(globalVariants, "screen", "mobileOnly")
+                ? true
+                : true
+            ) ? (
               <a
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
@@ -496,7 +508,7 @@ function PlasmicPrinter__RenderFunc(props: {
                     "nvs"
                   )
                 })}
-                href={"https://arxiv.org/abs/2308.14108" as const}
+                href={"" as const}
                 onClick={async event => {
                   const $steps = {};
                 }}

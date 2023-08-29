@@ -337,11 +337,6 @@
           "filePath": "plasmic/john_minelli_page/images/reflections3.svg"
         },
         {
-          "id": "p8gNcOvToO",
-          "name": "Disk 4",
-          "filePath": "plasmic/john_minelli_page/images/disk4.svg"
-        },
-        {
           "id": "FQQezANf-i",
           "name": "Reflections 4",
           "filePath": "plasmic/john_minelli_page/images/reflections4.svg"
@@ -377,46 +372,6 @@
           "filePath": "plasmic/john_minelli_page/images/image2.svg"
         },
         {
-          "id": "Xte0cJ39Jx",
-          "name": "image 3",
-          "filePath": "plasmic/john_minelli_page/images/image3.svg"
-        },
-        {
-          "id": "LIybeBghK",
-          "name": "image 4",
-          "filePath": "plasmic/john_minelli_page/images/image4.svg"
-        },
-        {
-          "id": "VZjzdlL9at",
-          "name": "image 5",
-          "filePath": "plasmic/john_minelli_page/images/image5.svg"
-        },
-        {
-          "id": "PRqzJ0OXzn",
-          "name": "image 6",
-          "filePath": "plasmic/john_minelli_page/images/image6.svg"
-        },
-        {
-          "id": "nsqrABbxi",
-          "name": "Eye2",
-          "filePath": "plasmic/john_minelli_page/images/eye2.svg"
-        },
-        {
-          "id": "Q8HEUzOhF-",
-          "name": "Eye1",
-          "filePath": "plasmic/john_minelli_page/images/eye1.svg"
-        },
-        {
-          "id": "q67VDisC2",
-          "name": "Eye2 2",
-          "filePath": "plasmic/john_minelli_page/images/eye22.svg"
-        },
-        {
-          "id": "fWRa8FmPW",
-          "name": "Eye2 3",
-          "filePath": "plasmic/john_minelli_page/images/eye23.svg"
-        },
-        {
           "id": "TSRfw8Efl",
           "name": "image 7",
           "filePath": "plasmic/john_minelli_page/images/image7.png"
@@ -447,79 +402,9 @@
           "filePath": "plasmic/john_minelli_page/images/r2Png.png"
         },
         {
-          "id": "LfnpAOA8q",
-          "name": "Eye2 4",
-          "filePath": "plasmic/john_minelli_page/images/eye24.svg"
-        },
-        {
-          "id": "ScqwC7NnXu",
-          "name": "Eye1 2",
-          "filePath": "plasmic/john_minelli_page/images/eye12.svg"
-        },
-        {
-          "id": "fHOvt2ogf",
-          "name": "Eye2 5",
-          "filePath": "plasmic/john_minelli_page/images/eye25.svg"
-        },
-        {
-          "id": "40EqlHVdw5",
-          "name": "Eye1 3",
-          "filePath": "plasmic/john_minelli_page/images/eye13.svg"
-        },
-        {
-          "id": "Cvw5aPzow",
-          "name": "Eye2 6",
-          "filePath": "plasmic/john_minelli_page/images/eye26.svg"
-        },
-        {
-          "id": "PfjR3x9Bba",
-          "name": "Eye1 4",
-          "filePath": "plasmic/john_minelli_page/images/eye14.svg"
-        },
-        {
-          "id": "D181GzWxu",
-          "name": "Eye2 7",
-          "filePath": "plasmic/john_minelli_page/images/eye27.svg"
-        },
-        {
-          "id": "8cjIHA__Od",
-          "name": "Eye1 5",
-          "filePath": "plasmic/john_minelli_page/images/eye15.svg"
-        },
-        {
           "id": "fTwf5-1Q1",
           "name": "Eye1 6",
           "filePath": "plasmic/john_minelli_page/images/eye16.svg"
-        },
-        {
-          "id": "UQ17Hdifr",
-          "name": "Eye2 8",
-          "filePath": "plasmic/john_minelli_page/images/eye28.svg"
-        },
-        {
-          "id": "w57xn4C9L",
-          "name": "Eye2 9",
-          "filePath": "plasmic/john_minelli_page/images/eye29.svg"
-        },
-        {
-          "id": "K2AEXTHXy",
-          "name": "eyes 3",
-          "filePath": "plasmic/john_minelli_page/images/eyes3.png"
-        },
-        {
-          "id": "9WqwpCpLLb",
-          "name": "eyes 2",
-          "filePath": "plasmic/john_minelli_page/images/eyes2.svg"
-        },
-        {
-          "id": "RJtYHEk2h",
-          "name": "eyes 4",
-          "filePath": "plasmic/john_minelli_page/images/eyes4.svg"
-        },
-        {
-          "id": "lWLOdTk2s",
-          "name": "Eye1.png",
-          "filePath": "plasmic/john_minelli_page/images/eye1Png.png"
         }
       ],
       "indirect": false,
