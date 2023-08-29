@@ -45,7 +45,7 @@ import sty from "./PlasmicHome.module.css"; // plasmic-import: VuN4Vj5UkyvQa/css
 
 import immaginepng9FfEi69E from "./images/immaginepng.png"; // plasmic-import: 9FfEI69E_/picture
 import image23DNxZgayuy from "./images/image2.svg"; // plasmic-import: 3DNxZgayuy/picture
-import githubSvgrepoCom1SvgTQxq5NPiOd from "./images/githubSvgrepoCom1Svg.svg"; // plasmic-import: tQxq5NPiOd/picture
+import faviconsvgTQxq5NPiOd from "./images/faviconsvg.svg"; // plasmic-import: tQxq5NPiOd/picture
 
 createPlasmicElementProxy;
 
@@ -109,10 +109,10 @@ function PlasmicHome__RenderFunc(props: {
   const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "printer.variable",
+        path: "printer.arxivLink",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       },
       {
         path: "designer",
@@ -431,14 +431,14 @@ function PlasmicHome__RenderFunc(props: {
                   <Printer
                     data-plasmic-name={"printer"}
                     data-plasmic-override={overrides.printer}
-                    className={classNames("__wab_instance", sty.printer)}
-                    onVariableChange={p.generateStateOnChangeProp($state, [
+                    arxivLink={p.generateStateValueProp($state, [
                       "printer",
-                      "variable"
+                      "arxivLink"
                     ])}
-                    variable={p.generateStateValueProp($state, [
+                    className={classNames("__wab_instance", sty.printer)}
+                    onArxivLinkChange={p.generateStateOnChangeProp($state, [
                       "printer",
-                      "variable"
+                      "arxivLink"
                     ])}
                   />
                 </div>

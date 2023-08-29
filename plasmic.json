@@ -307,11 +307,6 @@
           "filePath": "plasmic/john_minelli_page/images/immaginepng.png"
         },
         {
-          "id": "2Mn14dalQv",
-          "name": "Disk",
-          "filePath": "plasmic/john_minelli_page/images/disk.svg"
-        },
-        {
           "id": "Up_nF59oem",
           "name": "Reflections",
           "filePath": "plasmic/john_minelli_page/images/reflections.svg"
@@ -325,11 +320,6 @@
           "id": "Pn-SwQUERp",
           "name": "Reflections 2",
           "filePath": "plasmic/john_minelli_page/images/reflections2.svg"
-        },
-        {
-          "id": "xw2MH-rchN",
-          "name": "Disk 3",
-          "filePath": "plasmic/john_minelli_page/images/disk3.svg"
         },
         {
           "id": "1c0bh5V8Bb",
@@ -358,8 +348,8 @@
         },
         {
           "id": "tQxq5NPiOd",
-          "name": "github-svgrepo-com (1).svg",
-          "filePath": "plasmic/john_minelli_page/images/githubSvgrepoCom1Svg.svg"
+          "name": "favicon.svg",
+          "filePath": "plasmic/john_minelli_page/images/faviconsvg.svg"
         },
         {
           "id": "rqSlXDSwk",

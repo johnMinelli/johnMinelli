@@ -60,13 +60,13 @@ export const PlasmicPrinter__VariantProps = new Array<VariantPropType>(
 );
 
 export type PlasmicPrinter__ArgsType = {
-  variable?: string;
-  onVariableChange?: (val: string) => void;
+  arxivLink?: string;
+  onArxivLinkChange?: (val: string) => void;
 };
 type ArgPropType = keyof PlasmicPrinter__ArgsType;
 export const PlasmicPrinter__ArgProps = new Array<ArgPropType>(
-  "variable",
-  "onVariableChange"
+  "arxivLink",
+  "onArxivLinkChange"
 );
 
 export type PlasmicPrinter__OverridesType = {
@@ -77,14 +77,14 @@ export type PlasmicPrinter__OverridesType = {
   longerSheet?: p.Flex<typeof p.PlasmicImg>;
   printedArea?: p.Flex<"div">;
   text?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   link?: p.Flex<"a">;
+  img?: p.Flex<typeof p.PlasmicImg>;
   sheetWheel?: p.Flex<"div">;
 };
 
 export interface DefaultPrinterProps {
-  variable?: string;
-  onVariableChange?: (val: string) => void;
+  arxivLink?: string;
+  onArxivLinkChange?: (val: string) => void;
   printedPapers?: SingleChoiceArg<"nvs" | "leggedLocomotion">;
   className?: string;
 }
@@ -121,12 +121,12 @@ function PlasmicPrinter__RenderFunc(props: {
   const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "variable",
+        path: "arxivLink",
         type: "writable",
         variableType: "text",
 
-        valueProp: "variable",
-        onChangeProp: "onVariableChange"
+        valueProp: "arxivLink",
+        onChangeProp: "onArxivLinkChange"
       },
       {
         path: "printedPapers",
@@ -294,6 +294,78 @@ function PlasmicPrinter__RenderFunc(props: {
                 $steps["updatePrintedPapers"]
               );
             }
+            $steps["updateArxivLink"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "qAvD7dZwE",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "variable"
+                      },
+                      () => ({
+                        objRoot: $state,
+                        variablePath: ["arxivLink"]
+                      })
+                    ),
+                    operation: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "qAvD7dZwE",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "operation"
+                      },
+                      () => 0
+                    ),
+                    value: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "qAvD7dZwE",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "value"
+                      },
+                      () => "https://arxiv.org/abs/2308.14108"
+                    )
+                  };
+                  return __wrapUserFunction(
+                    {
+                      type: "InteractionLoc",
+                      actionName: "updateVariable",
+                      interactionUuid: "qAvD7dZwE",
+                      componentUuid: "ktUZWyedPGv"
+                    },
+                    () =>
+                      (({ variable, value, startIndex, deleteCount }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        p.set(objRoot, variablePath, value);
+                        return value;
+                      })?.apply(null, [actionArgs]),
+                    actionArgs
+                  );
+                })()
+              : undefined;
+            if (
+              typeof $steps["updateArxivLink"] === "object" &&
+              typeof $steps["updateArxivLink"].then === "function"
+            ) {
+              $steps["updateArxivLink"] = await __wrapUserPromise(
+                {
+                  type: "InteractionLoc",
+                  actionName: "updateVariable",
+                  interactionUuid: "qAvD7dZwE",
+                  componentUuid: "ktUZWyedPGv"
+                },
+                $steps["updateArxivLink"]
+              );
+            }
           }}
         />
 
@@ -382,6 +454,68 @@ function PlasmicPrinter__RenderFunc(props: {
                 $steps["updatePrintedPapers"]
               );
             }
+            $steps["updateArxivLink"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "qDPunBDgu",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "variable"
+                      },
+                      () => ({
+                        objRoot: $state,
+                        variablePath: ["arxivLink"]
+                      })
+                    ),
+                    operation: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "qDPunBDgu",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "operation"
+                      },
+                      () => 1
+                    )
+                  };
+                  return __wrapUserFunction(
+                    {
+                      type: "InteractionLoc",
+                      actionName: "updateVariable",
+                      interactionUuid: "qDPunBDgu",
+                      componentUuid: "ktUZWyedPGv"
+                    },
+                    () =>
+                      (({ variable, value, startIndex, deleteCount }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        p.set(objRoot, variablePath, undefined);
+                        return undefined;
+                      })?.apply(null, [actionArgs]),
+                    actionArgs
+                  );
+                })()
+              : undefined;
+            if (
+              typeof $steps["updateArxivLink"] === "object" &&
+              typeof $steps["updateArxivLink"].then === "function"
+            ) {
+              $steps["updateArxivLink"] = await __wrapUserPromise(
+                {
+                  type: "InteractionLoc",
+                  actionName: "updateVariable",
+                  interactionUuid: "qDPunBDgu",
+                  componentUuid: "ktUZWyedPGv"
+                },
+                $steps["updateArxivLink"]
+              );
+            }
           }}
         />
 
@@ -463,38 +597,9 @@ function PlasmicPrinter__RenderFunc(props: {
                 ? true
                 : hasVariant(globalVariants, "screen", "mobileOnly")
                 ? true
-                : true
-            ) ? (
-              <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img, {
-                  [sty.imgprintedPapers_nvs]: hasVariant(
-                    $state,
-                    "printedPapers",
-                    "nvs"
-                  )
-                })}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"39px" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: image8TwfgTt7W,
-                  fullWidth: 300,
-                  fullHeight: 135,
-                  aspectRatio: 2.222644
-                }}
-              />
-            ) : null}
-            {(
-              hasVariant($state, "printedPapers", "nvs")
+                : hasVariant(globalVariants, "screen", "tablet")
                 ? true
-                : hasVariant(globalVariants, "screen", "mobileOnly")
+                : hasVariant(globalVariants, "screen", "laptop")
                 ? true
                 : true
             ) ? (
@@ -502,18 +607,71 @@ function PlasmicPrinter__RenderFunc(props: {
                 data-plasmic-name={"link"}
                 data-plasmic-override={overrides.link}
                 className={classNames(projectcss.all, projectcss.a, sty.link, {
+                  [sty.linkprintedPapers_leggedLocomotion]: hasVariant(
+                    $state,
+                    "printedPapers",
+                    "leggedLocomotion"
+                  ),
                   [sty.linkprintedPapers_nvs]: hasVariant(
                     $state,
                     "printedPapers",
                     "nvs"
                   )
                 })}
-                href={"" as const}
+                href={(() => {
+                  try {
+                    return $state.arxivLink;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return `/`;
+                    }
+                    throw e;
+                  }
+                })()}
                 onClick={async event => {
                   const $steps = {};
                 }}
                 target={"_blank" as const}
-              />
+              >
+                {(
+                  hasVariant($state, "printedPapers", "nvs")
+                    ? true
+                    : hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : hasVariant(globalVariants, "screen", "laptop")
+                    ? true
+                    : true
+                ) ? (
+                  <p.PlasmicImg
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
+                    alt={""}
+                    className={classNames(sty.img, {
+                      [sty.imgprintedPapers_nvs]: hasVariant(
+                        $state,
+                        "printedPapers",
+                        "nvs"
+                      )
+                    })}
+                    displayHeight={"100%" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: image8TwfgTt7W,
+                      fullWidth: 300,
+                      fullHeight: 135,
+                      aspectRatio: 2.222644
+                    }}
+                  />
+                ) : null}
+              </a>
             ) : null}
           </div>
         ) : null}
@@ -591,6 +749,68 @@ function PlasmicPrinter__RenderFunc(props: {
                 $steps["updatePrintedPapers"]
               );
             }
+            $steps["updateArxivLink"] = true
+              ? (() => {
+                  const actionArgs = {
+                    variable: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "KYL5MrhvC",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "variable"
+                      },
+                      () => ({
+                        objRoot: $state,
+                        variablePath: ["arxivLink"]
+                      })
+                    ),
+                    operation: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "updateVariable",
+                        interactionUuid: "KYL5MrhvC",
+                        componentUuid: "ktUZWyedPGv",
+                        argName: "operation"
+                      },
+                      () => 1
+                    )
+                  };
+                  return __wrapUserFunction(
+                    {
+                      type: "InteractionLoc",
+                      actionName: "updateVariable",
+                      interactionUuid: "KYL5MrhvC",
+                      componentUuid: "ktUZWyedPGv"
+                    },
+                    () =>
+                      (({ variable, value, startIndex, deleteCount }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        p.set(objRoot, variablePath, undefined);
+                        return undefined;
+                      })?.apply(null, [actionArgs]),
+                    actionArgs
+                  );
+                })()
+              : undefined;
+            if (
+              typeof $steps["updateArxivLink"] === "object" &&
+              typeof $steps["updateArxivLink"].then === "function"
+            ) {
+              $steps["updateArxivLink"] = await __wrapUserPromise(
+                {
+                  type: "InteractionLoc",
+                  actionName: "updateVariable",
+                  interactionUuid: "KYL5MrhvC",
+                  componentUuid: "ktUZWyedPGv"
+                },
+                $steps["updateArxivLink"]
+              );
+            }
           }}
         />
       </div>
@@ -607,18 +827,18 @@ const PlasmicDescendants = {
     "longerSheet",
     "printedArea",
     "text",
-    "img",
     "link",
+    "img",
     "sheetWheel"
   ],
   printer: ["printer"],
   nvsButton: ["nvsButton"],
   legButton: ["legButton"],
   longerSheet: ["longerSheet"],
-  printedArea: ["printedArea", "text", "img", "link"],
+  printedArea: ["printedArea", "text", "link", "img"],
   text: ["text"],
+  link: ["link", "img"],
   img: ["img"],
-  link: ["link"],
   sheetWheel: ["sheetWheel"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -632,8 +852,8 @@ type NodeDefaultElementType = {
   longerSheet: typeof p.PlasmicImg;
   printedArea: "div";
   text: "div";
-  img: typeof p.PlasmicImg;
   link: "a";
+  img: typeof p.PlasmicImg;
   sheetWheel: "div";
 };
 
@@ -703,8 +923,8 @@ export const PlasmicPrinter = Object.assign(
     longerSheet: makeNodeComponent("longerSheet"),
     printedArea: makeNodeComponent("printedArea"),
     text: makeNodeComponent("text"),
-    img: makeNodeComponent("img"),
     link: makeNodeComponent("link"),
+    img: makeNodeComponent("img"),
     sheetWheel: makeNodeComponent("sheetWheel"),
 
     // Metadata about props expected for PlasmicPrinter
