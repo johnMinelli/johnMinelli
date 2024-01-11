@@ -15,10 +15,9 @@ I've always been told to learn different things because you never know when they
 Over the years I experienced the field of mechanical industry with CNC machines 2.5/3 axes, electrical hobby including components soldering, and play around with Arduino/Adafruit/Raspberry (check out my repositories on IoT, those are part of my thesis for which I collaborated with an Eclipse foundation development team (y)). I found myself very interested in 3D modeling with even basic experiments in Unity3D. Crypto/blockchain follower (just the technology behind it) since early 2016 and supporter of decentralized opensource solutions.
 
 I really like the hardware and the architectural side of a computer but being the code development more accessible and straightforward for a kid I embraced this world where elegance and order reigns (...okay, we all try at our best 🙂).\
-Just to name a few languages (of the many I've experimented with) I really enjoy writing mobile apps in **Kotlin** but today I'm fully deep into Machine Learning and AI integrations in **Python** (Keras, TF,Pytorch, Numpy, Scikit Learn, OpenCV, ...).
+Just to name a few languages (of the many I've experimented with) I really enjoy writing mobile apps in **Kotlin** but today I'm fully deep into Machine Learning and AI integrations in **Python** (Keras, TF, Pytorch, Numpy, Scikit-Learn, OpenCV, ...).
 
 ## Something more?
-I'm a big believer of the "mens sana in corpore sano" creed: I'm not an **A**thlete but I regularly attend the gym and fitness training classes.
-I also love cinema and the whole 'making of' industry behind it (that's also why computer vision is so appealing to me)
+I'm a big believer of the "mens sana in corpore sano" creed, I love cinema and the whole 'making of' industry behind it (that's also why computer vision is so appealing to me)
 
-I'm always looking for new challenges, so feel free to leave questions or suggestions and, please don't hesitate to contact me. Thanks for visiting!
+I'm always looking for new challenges, so feel free to leave questions or suggestions and, please don't hesitate to contact me. Have fun!
