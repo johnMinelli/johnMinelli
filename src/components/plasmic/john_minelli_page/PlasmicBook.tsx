@@ -13,25 +13,48 @@
 
 import * as React from "react";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import TextInput from "../../TextInput"; // plasmic-import: 2tWVC6Xhmwx/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -76,25 +99,25 @@ type ArgPropType = keyof PlasmicBook__ArgsType;
 export const PlasmicBook__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicBook__OverridesType = {
-  root?: p.Flex<"div">;
-  frontCover?: p.Flex<"div">;
-  rectangle9?: p.Flex<"div">;
-  textInput?: p.Flex<typeof TextInput>;
-  link?: p.Flex<"a">;
-  github?: p.Flex<"div">;
-  svg?: p.Flex<"svg">;
-  rectangle18?: p.Flex<"div">;
-  backCover?: p.Flex<"div">;
-  rectangle15?: p.Flex<"div">;
-  rectangle16?: p.Flex<"div">;
-  rectangle17?: p.Flex<"div">;
-  sideCover?: p.Flex<"div">;
-  rectangle8?: p.Flex<"div">;
-  reinforcementLearning?: p.Flex<"div">;
-  barcode2?: p.Flex<"div">;
-  line12?: p.Flex<"div">;
-  line3?: p.Flex<"div">;
-  _2?: p.Flex<"div">;
+  root?: Flex__<"div">;
+  frontCover?: Flex__<"div">;
+  rectangle9?: Flex__<"div">;
+  textInput?: Flex__<typeof TextInput>;
+  link?: Flex__<"a">;
+  github?: Flex__<"div">;
+  svg?: Flex__<"svg">;
+  rectangle18?: Flex__<"div">;
+  backCover?: Flex__<"div">;
+  rectangle15?: Flex__<"div">;
+  rectangle16?: Flex__<"div">;
+  rectangle17?: Flex__<"div">;
+  sideCover?: Flex__<"div">;
+  rectangle8?: Flex__<"div">;
+  reinforcementLearning?: Flex__<"div">;
+  barcode2?: Flex__<"div">;
+  line12?: Flex__<"div">;
+  line3?: Flex__<"div">;
+  _2?: Flex__<"div">;
 };
 
 export interface DefaultBookProps {
@@ -111,13 +134,7 @@ export interface DefaultBookProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicBook__RenderFunc(props: {
   variants: PlasmicBook__VariantsArgs;
@@ -134,13 +151,13 @@ function PlasmicBook__RenderFunc(props: {
     ...variants
   };
 
-  const $ctx = ph.useDataEnv?.() || {};
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = p.useCurrentUser?.() || {};
+  const currentUser = useCurrentUser?.() || {};
 
-  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "project",
@@ -152,12 +169,12 @@ function PlasmicBook__RenderFunc(props: {
         path: "textInput.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, {
+  const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
     $queries: {},
@@ -175,877 +192,793 @@ function PlasmicBook__RenderFunc(props: {
   };
 
   return (
-    true ? (
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        sty.root,
+        {
+          [sty.rootproject_flatland]: hasVariant($state, "project", "flatland"),
+          [sty.rootproject_movingObject]: hasVariant(
+            $state,
+            "project",
+            "movingObject"
+          ),
+          [sty.rootproject_puzzleSolver]: hasVariant(
+            $state,
+            "project",
+            "puzzleSolver"
+          ),
+          [sty.rootproject_yaeOs]: hasVariant($state, "project", "yaeOs")
+        }
+      )}
+      data-plasmic-trigger-props={[
+        triggerRootHoverProps,
+        triggerRootFocusWithinProps
+      ]}
+    >
       <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          sty.root,
-          {
-            [sty.rootproject_flatland]: hasVariant(
-              $state,
-              "project",
-              "flatland"
-            ),
-            [sty.rootproject_movingObject]: hasVariant(
-              $state,
-              "project",
-              "movingObject"
-            ),
-            [sty.rootproject_puzzleSolver]: hasVariant(
-              $state,
-              "project",
-              "puzzleSolver"
-            ),
-            [sty.rootproject_yaeOs]: hasVariant($state, "project", "yaeOs")
-          }
-        )}
-        data-plasmic-trigger-props={[
-          triggerRootHoverProps,
-          triggerRootFocusWithinProps
-        ]}
+        data-plasmic-name={"frontCover"}
+        data-plasmic-override={overrides.frontCover}
+        className={classNames(projectcss.all, sty.frontCover, {
+          [sty.frontCoverproject_flatland]: hasVariant(
+            $state,
+            "project",
+            "flatland"
+          ),
+          [sty.frontCoverproject_yaeOs]: hasVariant($state, "project", "yaeOs")
+        })}
       >
-        {(
-          triggers.focusWithin_root ? true : triggers.hover_root ? true : true
-        ) ? (
-          <div
-            data-plasmic-name={"frontCover"}
-            data-plasmic-override={overrides.frontCover}
-            className={classNames(projectcss.all, sty.frontCover, {
-              [sty.frontCoverproject_flatland]: hasVariant(
-                $state,
-                "project",
-                "flatland"
-              ),
-              [sty.frontCoverproject_yaeOs]: hasVariant(
-                $state,
-                "project",
-                "yaeOs"
-              )
-            })}
-          >
-            {(triggers.focusWithin_root ? true : true) ? (
-              <div
-                data-plasmic-name={"rectangle9"}
-                data-plasmic-override={overrides.rectangle9}
-                className={classNames(projectcss.all, sty.rectangle9)}
-              />
-            ) : null}
-            {(triggers.focusWithin_root ? true : true) ? (
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img__wc11B)}
-                displayHeight={"100%" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"100%" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: disk59N5Ej4Qp5,
-                  fullWidth: 121.756,
-                  fullHeight: 122.169,
-                  aspectRatio: 0.99187
-                }}
-              />
-            ) : null}
-            {(triggers.focusWithin_root ? true : true) ? (
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img__dA0Ni)}
-                displayHeight={"100%" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"100%" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: maskGroupKJkatJgD9,
-                  fullWidth: 121.756,
-                  fullHeight: 122.169,
-                  aspectRatio: 0.99187
-                }}
-              />
-            ) : null}
-            {(triggers.focusWithin_root ? true : true) ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2ATl2,
-                  {
-                    [sty.textproject_coRec___2ATl22S0Cn]: hasVariant(
-                      $state,
-                      "project",
-                      "coRec"
-                    ),
-                    [sty.textproject_coinshoarder___2ATl2T9S5Q]: hasVariant(
-                      $state,
-                      "project",
-                      "coinshoarder"
-                    ),
-                    [sty.textproject_envKnob___2ATl2Lj7EF]: hasVariant(
-                      $state,
-                      "project",
-                      "envKnob"
-                    ),
-                    [sty.textproject_flatland___2ATl2Zf0Uy]: hasVariant(
-                      $state,
-                      "project",
-                      "flatland"
-                    ),
-                    [sty.textproject_movingObject___2ATl21Qen5]: hasVariant(
-                      $state,
-                      "project",
-                      "movingObject"
-                    ),
-                    [sty.textproject_puzzleSolver___2ATl2DhSqr]: hasVariant(
-                      $state,
-                      "project",
-                      "puzzleSolver"
-                    ),
-                    [sty.textproject_twoWaySinth___2ATl28Mrs3]: hasVariant(
-                      $state,
-                      "project",
-                      "twoWaySinth"
-                    ),
-                    [sty.textproject_yaeOs___2ATl2Uw09H]: hasVariant(
-                      $state,
-                      "project",
-                      "yaeOs"
-                    )
-                  }
-                )}
-              >
-                {hasVariant($state, "project", "twoWaySinth")
-                  ? "ML4CV"
-                  : hasVariant($state, "project", "envKnob")
-                  ? "RL\n"
-                  : hasVariant($state, "project", "coRec")
-                  ? "NLP"
-                  : hasVariant($state, "project", "yaeOs")
-                  ? "OS"
-                  : hasVariant($state, "project", "coinshoarder")
-                  ? "WWW"
-                  : hasVariant($state, "project", "puzzleSolver")
-                  ? "CV"
-                  : hasVariant($state, "project", "movingObject")
-                  ? "CV"
-                  : hasVariant($state, "project", "flatland")
-                  ? "RL"
-                  : "RL"}
-              </div>
-            ) : null}
-            {(triggers.focusWithin_root ? true : true) ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___25MQ,
-                  {
-                    [sty.textproject_coRec___25MQ2S0Cn]: hasVariant(
-                      $state,
-                      "project",
-                      "coRec"
-                    ),
-                    [sty.textproject_coinshoarder___25MQt9S5Q]: hasVariant(
-                      $state,
-                      "project",
-                      "coinshoarder"
-                    ),
-                    [sty.textproject_envKnob___25MQLj7EF]: hasVariant(
-                      $state,
-                      "project",
-                      "envKnob"
-                    ),
-                    [sty.textproject_flatland___25MQZf0Uy]: hasVariant(
-                      $state,
-                      "project",
-                      "flatland"
-                    ),
-                    [sty.textproject_movingObject___25MQ1Qen5]: hasVariant(
-                      $state,
-                      "project",
-                      "movingObject"
-                    ),
-                    [sty.textproject_puzzleSolver___25MQdhSqr]: hasVariant(
-                      $state,
-                      "project",
-                      "puzzleSolver"
-                    ),
-                    [sty.textproject_twoWaySinth___25MQ8Mrs3]: hasVariant(
-                      $state,
-                      "project",
-                      "twoWaySinth"
-                    ),
-                    [sty.textproject_yaeOs___25MQUw09H]: hasVariant(
-                      $state,
-                      "project",
-                      "yaeOs"
-                    )
-                  }
-                )}
-              >
-                {hasVariant($state, "project", "twoWaySinth")
-                  ? "TwoWaySinth"
-                  : hasVariant($state, "project", "envKnob")
-                  ? "EnvKnob\n"
-                  : hasVariant($state, "project", "coRec")
-                  ? "Corec w/\ntransformers"
-                  : hasVariant($state, "project", "yaeOs")
-                  ? "YaeOS"
-                  : hasVariant($state, "project", "coinshoarder")
-                  ? "Coinshoarder\nwebsite"
-                  : hasVariant($state, "project", "puzzleSolver")
-                  ? "Puzzle solver"
-                  : hasVariant($state, "project", "movingObject")
-                  ? "Moving object\nremoval"
-                  : hasVariant($state, "project", "flatland")
-                  ? "Flatland project"
-                  : "Flatland project"}
-              </div>
-            ) : null}
-            {(
-              triggers.focusWithin_root
-                ? true
-                : triggers.hover_root
-                ? true
-                : true
-            ) ? (
-              <TextInput
-                data-plasmic-name={"textInput"}
-                data-plasmic-override={overrides.textInput}
-                className={classNames("__wab_instance", sty.textInput, {
-                  [sty.textInputproject_coRec]: hasVariant(
-                    $state,
-                    "project",
-                    "coRec"
-                  ),
-                  [sty.textInputproject_coinshoarder]: hasVariant(
-                    $state,
-                    "project",
-                    "coinshoarder"
-                  ),
-                  [sty.textInputproject_envKnob]: hasVariant(
-                    $state,
-                    "project",
-                    "envKnob"
-                  ),
-                  [sty.textInputproject_flatland]: hasVariant(
-                    $state,
-                    "project",
-                    "flatland"
-                  ),
-                  [sty.textInputproject_movingObject]: hasVariant(
-                    $state,
-                    "project",
-                    "movingObject"
-                  ),
-                  [sty.textInputproject_puzzleSolver]: hasVariant(
-                    $state,
-                    "project",
-                    "puzzleSolver"
-                  ),
-                  [sty.textInputproject_twoWaySinth]: hasVariant(
-                    $state,
-                    "project",
-                    "twoWaySinth"
-                  )
-                })}
-                onChange={(...eventArgs) => {
-                  p.generateStateOnChangeProp($state, ["textInput", "value"])(
-                    (e => e.target?.value).apply(null, eventArgs)
-                  );
-                }}
-                value={
-                  p.generateStateValueProp($state, ["textInput", "value"]) ?? ""
-                }
-              />
-            ) : null}
-            {(triggers.focusWithin_root ? true : true) ? (
-              <a
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(projectcss.all, projectcss.a, sty.link, {
-                  [sty.linkproject_coRec]: hasVariant(
-                    $state,
-                    "project",
-                    "coRec"
-                  ),
-                  [sty.linkproject_coinshoarder]: hasVariant(
-                    $state,
-                    "project",
-                    "coinshoarder"
-                  ),
-                  [sty.linkproject_envKnob]: hasVariant(
-                    $state,
-                    "project",
-                    "envKnob"
-                  ),
-                  [sty.linkproject_flatland]: hasVariant(
-                    $state,
-                    "project",
-                    "flatland"
-                  ),
-                  [sty.linkproject_movingObject]: hasVariant(
-                    $state,
-                    "project",
-                    "movingObject"
-                  ),
-                  [sty.linkproject_puzzleSolver]: hasVariant(
-                    $state,
-                    "project",
-                    "puzzleSolver"
-                  ),
-                  [sty.linkproject_twoWaySinth]: hasVariant(
-                    $state,
-                    "project",
-                    "twoWaySinth"
-                  ),
-                  [sty.linkproject_yaeOs]: hasVariant(
-                    $state,
-                    "project",
-                    "yaeOs"
-                  )
-                })}
-                href={
-                  hasVariant($state, "project", "twoWaySinth")
-                    ? ("https://github.com/johnMinelli/TwoWaySynth" as const)
-                    : hasVariant($state, "project", "envKnob")
-                    ? ("https://github.com/johnMinelli/RL-EnvKnob/" as const)
-                    : hasVariant($state, "project", "coRec")
-                    ? ("https://github.com/johnMinelli/CoRec" as const)
-                    : hasVariant($state, "project", "yaeOs")
-                    ? ("https://github.com/johnMinelli/yaeOS" as const)
-                    : hasVariant($state, "project", "coinshoarder")
-                    ? ("https://github.com/johnMinelli/Coinshoarder" as const)
-                    : hasVariant($state, "project", "puzzleSolver")
-                    ? ("https://github.com/johnMinelli/PuzzleSolver" as const)
-                    : hasVariant($state, "project", "movingObject")
-                    ? ("https://github.com/johnMinelli/MovingObjectRemoval" as const)
-                    : hasVariant($state, "project", "flatland")
-                    ? ("https://github.com/johnMinelli/RL-flatland-challenge" as const)
-                    : ("https://www.google.it" as const)
-                }
-                target={"_blank" as const}
-              >
-                <div
-                  data-plasmic-name={"github"}
-                  data-plasmic-override={overrides.github}
-                  className={classNames(projectcss.all, sty.github, {
-                    [sty.githubproject_twoWaySinth]: hasVariant(
-                      $state,
-                      "project",
-                      "twoWaySinth"
-                    )
-                  })}
-                >
-                  <GithubSvgIcon
-                    data-plasmic-name={"svg"}
-                    data-plasmic-override={overrides.svg}
-                    className={classNames(projectcss.all, sty.svg)}
-                    role={"img"}
-                  />
+        <div
+          data-plasmic-name={"rectangle9"}
+          data-plasmic-override={overrides.rectangle9}
+          className={classNames(projectcss.all, sty.rectangle9)}
+        />
 
-                  <div
-                    data-plasmic-name={"rectangle18"}
-                    data-plasmic-override={overrides.rectangle18}
-                    className={classNames(projectcss.all, sty.rectangle18, {
-                      [sty.rectangle18project_puzzleSolver]: hasVariant(
-                        $state,
-                        "project",
-                        "puzzleSolver"
-                      )
-                    })}
-                  />
-                </div>
-              </a>
-            ) : null}
-          </div>
-        ) : null}
-        {(
-          triggers.focusWithin_root
-            ? true
-            : hasVariant($state, "project", "twoWaySinth")
-            ? true
-            : hasVariant($state, "project", "envKnob")
-            ? true
-            : hasVariant($state, "project", "coRec")
-            ? true
-            : hasVariant($state, "project", "yaeOs")
-            ? true
-            : hasVariant($state, "project", "coinshoarder")
-            ? true
-            : hasVariant($state, "project", "puzzleSolver")
-            ? true
-            : hasVariant($state, "project", "movingObject")
-            ? true
-            : hasVariant($state, "project", "flatland")
-            ? true
-            : true
-        ) ? (
-          <div
-            data-plasmic-name={"backCover"}
-            data-plasmic-override={overrides.backCover}
-            className={classNames(projectcss.all, sty.backCover, {
-              [sty.backCoverproject_coRec]: hasVariant(
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__wc11B)}
+          displayHeight={"100%"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"100%"}
+          loading={"lazy"}
+          src={{
+            src: disk59N5Ej4Qp5,
+            fullWidth: 121.756,
+            fullHeight: 122.169,
+            aspectRatio: 0.99187
+          }}
+        />
+
+        <PlasmicImg__
+          alt={""}
+          className={classNames(sty.img__dA0Ni)}
+          displayHeight={"100%"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"100%"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"100%"}
+          loading={"lazy"}
+          src={{
+            src: maskGroupKJkatJgD9,
+            fullWidth: 121.756,
+            fullHeight: 122.169,
+            aspectRatio: 0.99187
+          }}
+        />
+
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text___2ATl2,
+            {
+              [sty.textproject_coRec___2ATl22S0Cn]: hasVariant(
                 $state,
                 "project",
                 "coRec"
               ),
-              [sty.backCoverproject_coinshoarder]: hasVariant(
+              [sty.textproject_coinshoarder___2ATl2T9S5Q]: hasVariant(
                 $state,
                 "project",
                 "coinshoarder"
               ),
-              [sty.backCoverproject_envKnob]: hasVariant(
+              [sty.textproject_envKnob___2ATl2Lj7EF]: hasVariant(
                 $state,
                 "project",
                 "envKnob"
               ),
-              [sty.backCoverproject_flatland]: hasVariant(
+              [sty.textproject_flatland___2ATl2Zf0Uy]: hasVariant(
                 $state,
                 "project",
                 "flatland"
               ),
-              [sty.backCoverproject_movingObject]: hasVariant(
+              [sty.textproject_movingObject___2ATl21Qen5]: hasVariant(
                 $state,
                 "project",
                 "movingObject"
               ),
-              [sty.backCoverproject_puzzleSolver]: hasVariant(
+              [sty.textproject_puzzleSolver___2ATl2DhSqr]: hasVariant(
                 $state,
                 "project",
                 "puzzleSolver"
               ),
-              [sty.backCoverproject_twoWaySinth]: hasVariant(
+              [sty.textproject_twoWaySinth___2ATl28Mrs3]: hasVariant(
                 $state,
                 "project",
                 "twoWaySinth"
               ),
-              [sty.backCoverproject_yaeOs]: hasVariant(
+              [sty.textproject_yaeOs___2ATl2Uw09H]: hasVariant(
                 $state,
                 "project",
                 "yaeOs"
               )
+            }
+          )}
+        >
+          {hasVariant($state, "project", "twoWaySinth")
+            ? "ML4CV"
+            : hasVariant($state, "project", "envKnob")
+            ? "RL\n"
+            : hasVariant($state, "project", "coRec")
+            ? "NLP"
+            : hasVariant($state, "project", "yaeOs")
+            ? "OS"
+            : hasVariant($state, "project", "coinshoarder")
+            ? "WWW"
+            : hasVariant($state, "project", "puzzleSolver")
+            ? "CV"
+            : hasVariant($state, "project", "movingObject")
+            ? "CV"
+            : hasVariant($state, "project", "flatland")
+            ? "RL"
+            : "RL"}
+        </div>
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text___25MQ,
+            {
+              [sty.textproject_coRec___25MQ2S0Cn]: hasVariant(
+                $state,
+                "project",
+                "coRec"
+              ),
+              [sty.textproject_coinshoarder___25MQt9S5Q]: hasVariant(
+                $state,
+                "project",
+                "coinshoarder"
+              ),
+              [sty.textproject_envKnob___25MQLj7EF]: hasVariant(
+                $state,
+                "project",
+                "envKnob"
+              ),
+              [sty.textproject_flatland___25MQZf0Uy]: hasVariant(
+                $state,
+                "project",
+                "flatland"
+              ),
+              [sty.textproject_movingObject___25MQ1Qen5]: hasVariant(
+                $state,
+                "project",
+                "movingObject"
+              ),
+              [sty.textproject_puzzleSolver___25MQdhSqr]: hasVariant(
+                $state,
+                "project",
+                "puzzleSolver"
+              ),
+              [sty.textproject_twoWaySinth___25MQ8Mrs3]: hasVariant(
+                $state,
+                "project",
+                "twoWaySinth"
+              ),
+              [sty.textproject_yaeOs___25MQUw09H]: hasVariant(
+                $state,
+                "project",
+                "yaeOs"
+              )
+            }
+          )}
+        >
+          {hasVariant($state, "project", "twoWaySinth")
+            ? "TwoWaySinth"
+            : hasVariant($state, "project", "envKnob")
+            ? "EnvKnob\n"
+            : hasVariant($state, "project", "coRec")
+            ? "Corec w/\ntransformers"
+            : hasVariant($state, "project", "yaeOs")
+            ? "YaeOS"
+            : hasVariant($state, "project", "coinshoarder")
+            ? "Coinshoarder\nwebsite"
+            : hasVariant($state, "project", "puzzleSolver")
+            ? "Puzzle solver"
+            : hasVariant($state, "project", "movingObject")
+            ? "Moving object\nremoval"
+            : hasVariant($state, "project", "flatland")
+            ? "Flatland project"
+            : "Flatland project"}
+        </div>
+        <TextInput
+          data-plasmic-name={"textInput"}
+          data-plasmic-override={overrides.textInput}
+          className={classNames("__wab_instance", sty.textInput, {
+            [sty.textInputproject_coRec]: hasVariant(
+              $state,
+              "project",
+              "coRec"
+            ),
+            [sty.textInputproject_coinshoarder]: hasVariant(
+              $state,
+              "project",
+              "coinshoarder"
+            ),
+            [sty.textInputproject_envKnob]: hasVariant(
+              $state,
+              "project",
+              "envKnob"
+            ),
+            [sty.textInputproject_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            ),
+            [sty.textInputproject_movingObject]: hasVariant(
+              $state,
+              "project",
+              "movingObject"
+            ),
+            [sty.textInputproject_puzzleSolver]: hasVariant(
+              $state,
+              "project",
+              "puzzleSolver"
+            ),
+            [sty.textInputproject_twoWaySinth]: hasVariant(
+              $state,
+              "project",
+              "twoWaySinth"
+            )
+          })}
+          onChange={(...eventArgs) => {
+            generateStateOnChangeProp($state, ["textInput", "value"])(
+              (e => e.target?.value).apply(null, eventArgs)
+            );
+          }}
+          value={generateStateValueProp($state, ["textInput", "value"]) ?? ""}
+        />
+
+        <a
+          data-plasmic-name={"link"}
+          data-plasmic-override={overrides.link}
+          className={classNames(projectcss.all, projectcss.a, sty.link, {
+            [sty.linkproject_coRec]: hasVariant($state, "project", "coRec"),
+            [sty.linkproject_coinshoarder]: hasVariant(
+              $state,
+              "project",
+              "coinshoarder"
+            ),
+            [sty.linkproject_envKnob]: hasVariant($state, "project", "envKnob"),
+            [sty.linkproject_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            ),
+            [sty.linkproject_movingObject]: hasVariant(
+              $state,
+              "project",
+              "movingObject"
+            ),
+            [sty.linkproject_puzzleSolver]: hasVariant(
+              $state,
+              "project",
+              "puzzleSolver"
+            ),
+            [sty.linkproject_twoWaySinth]: hasVariant(
+              $state,
+              "project",
+              "twoWaySinth"
+            ),
+            [sty.linkproject_yaeOs]: hasVariant($state, "project", "yaeOs")
+          })}
+          href={
+            hasVariant($state, "project", "twoWaySinth")
+              ? "https://github.com/johnMinelli/TwoWaySynth"
+              : hasVariant($state, "project", "envKnob")
+              ? "https://github.com/johnMinelli/RL-EnvKnob/"
+              : hasVariant($state, "project", "coRec")
+              ? "https://github.com/johnMinelli/CoRec"
+              : hasVariant($state, "project", "yaeOs")
+              ? "https://github.com/johnMinelli/yaeOS"
+              : hasVariant($state, "project", "coinshoarder")
+              ? "https://github.com/johnMinelli/Coinshoarder"
+              : hasVariant($state, "project", "puzzleSolver")
+              ? "https://github.com/johnMinelli/PuzzleSolver"
+              : hasVariant($state, "project", "movingObject")
+              ? "https://github.com/johnMinelli/MovingObjectRemoval"
+              : hasVariant($state, "project", "flatland")
+              ? "https://github.com/johnMinelli/RL-flatland-challenge"
+              : "https://www.google.it"
+          }
+          target={"_blank"}
+        >
+          <div
+            data-plasmic-name={"github"}
+            data-plasmic-override={overrides.github}
+            className={classNames(projectcss.all, sty.github, {
+              [sty.githubproject_twoWaySinth]: hasVariant(
+                $state,
+                "project",
+                "twoWaySinth"
+              )
             })}
           >
-            <div
-              data-plasmic-name={"rectangle15"}
-              data-plasmic-override={overrides.rectangle15}
-              className={classNames(projectcss.all, sty.rectangle15, {
-                [sty.rectangle15project_flatland]: hasVariant(
-                  $state,
-                  "project",
-                  "flatland"
-                ),
-                [sty.rectangle15project_movingObject]: hasVariant(
-                  $state,
-                  "project",
-                  "movingObject"
-                ),
-                [sty.rectangle15project_yaeOs]: hasVariant(
-                  $state,
-                  "project",
-                  "yaeOs"
-                )
-              })}
+            <GithubSvgIcon
+              data-plasmic-name={"svg"}
+              data-plasmic-override={overrides.svg}
+              className={classNames(projectcss.all, sty.svg)}
+              role={"img"}
             />
 
             <div
-              data-plasmic-name={"rectangle16"}
-              data-plasmic-override={overrides.rectangle16}
-              className={classNames(projectcss.all, sty.rectangle16, {
-                [sty.rectangle16project_flatland]: hasVariant(
+              data-plasmic-name={"rectangle18"}
+              data-plasmic-override={overrides.rectangle18}
+              className={classNames(projectcss.all, sty.rectangle18, {
+                [sty.rectangle18project_puzzleSolver]: hasVariant(
                   $state,
                   "project",
-                  "flatland"
+                  "puzzleSolver"
                 )
               })}
             />
+          </div>
+        </a>
+      </div>
+      <div
+        data-plasmic-name={"backCover"}
+        data-plasmic-override={overrides.backCover}
+        className={classNames(projectcss.all, sty.backCover, {
+          [sty.backCoverproject_coRec]: hasVariant($state, "project", "coRec"),
+          [sty.backCoverproject_coinshoarder]: hasVariant(
+            $state,
+            "project",
+            "coinshoarder"
+          ),
+          [sty.backCoverproject_envKnob]: hasVariant(
+            $state,
+            "project",
+            "envKnob"
+          ),
+          [sty.backCoverproject_flatland]: hasVariant(
+            $state,
+            "project",
+            "flatland"
+          ),
+          [sty.backCoverproject_movingObject]: hasVariant(
+            $state,
+            "project",
+            "movingObject"
+          ),
+          [sty.backCoverproject_puzzleSolver]: hasVariant(
+            $state,
+            "project",
+            "puzzleSolver"
+          ),
+          [sty.backCoverproject_twoWaySinth]: hasVariant(
+            $state,
+            "project",
+            "twoWaySinth"
+          ),
+          [sty.backCoverproject_yaeOs]: hasVariant($state, "project", "yaeOs")
+        })}
+      >
+        <div
+          data-plasmic-name={"rectangle15"}
+          data-plasmic-override={overrides.rectangle15}
+          className={classNames(projectcss.all, sty.rectangle15, {
+            [sty.rectangle15project_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            ),
+            [sty.rectangle15project_movingObject]: hasVariant(
+              $state,
+              "project",
+              "movingObject"
+            ),
+            [sty.rectangle15project_yaeOs]: hasVariant(
+              $state,
+              "project",
+              "yaeOs"
+            )
+          })}
+        />
 
-            <div
-              data-plasmic-name={"rectangle17"}
-              data-plasmic-override={overrides.rectangle17}
-              className={classNames(projectcss.all, sty.rectangle17, {
-                [sty.rectangle17project_coRec]: hasVariant(
+        <div
+          data-plasmic-name={"rectangle16"}
+          data-plasmic-override={overrides.rectangle16}
+          className={classNames(projectcss.all, sty.rectangle16, {
+            [sty.rectangle16project_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            )
+          })}
+        />
+
+        <div
+          data-plasmic-name={"rectangle17"}
+          data-plasmic-override={overrides.rectangle17}
+          className={classNames(projectcss.all, sty.rectangle17, {
+            [sty.rectangle17project_coRec]: hasVariant(
+              $state,
+              "project",
+              "coRec"
+            ),
+            [sty.rectangle17project_coinshoarder]: hasVariant(
+              $state,
+              "project",
+              "coinshoarder"
+            ),
+            [sty.rectangle17project_envKnob]: hasVariant(
+              $state,
+              "project",
+              "envKnob"
+            ),
+            [sty.rectangle17project_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            ),
+            [sty.rectangle17project_movingObject]: hasVariant(
+              $state,
+              "project",
+              "movingObject"
+            ),
+            [sty.rectangle17project_puzzleSolver]: hasVariant(
+              $state,
+              "project",
+              "puzzleSolver"
+            ),
+            [sty.rectangle17project_twoWaySinth]: hasVariant(
+              $state,
+              "project",
+              "twoWaySinth"
+            ),
+            [sty.rectangle17project_yaeOs]: hasVariant(
+              $state,
+              "project",
+              "yaeOs"
+            )
+          })}
+        />
+
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__zqi1Z,
+            {
+              [sty.textproject_coRec__zqi1Z2S0Cn]: hasVariant(
+                $state,
+                "project",
+                "coRec"
+              ),
+              [sty.textproject_coinshoarder__zqi1Zt9S5Q]: hasVariant(
+                $state,
+                "project",
+                "coinshoarder"
+              ),
+              [sty.textproject_envKnob__zqi1ZLj7EF]: hasVariant(
+                $state,
+                "project",
+                "envKnob"
+              ),
+              [sty.textproject_flatland__zqi1ZZf0Uy]: hasVariant(
+                $state,
+                "project",
+                "flatland"
+              ),
+              [sty.textproject_movingObject__zqi1Z1Qen5]: hasVariant(
+                $state,
+                "project",
+                "movingObject"
+              ),
+              [sty.textproject_puzzleSolver__zqi1ZdhSqr]: hasVariant(
+                $state,
+                "project",
+                "puzzleSolver"
+              ),
+              [sty.textproject_twoWaySinth__zqi1Z8Mrs3]: hasVariant(
+                $state,
+                "project",
+                "twoWaySinth"
+              ),
+              [sty.textproject_yaeOs__zqi1ZUw09H]: hasVariant(
+                $state,
+                "project",
+                "yaeOs"
+              )
+            }
+          )}
+        >
+          {hasVariant($state, "project", "twoWaySinth")
+            ? "Exploitation of the intrinsic information of a view to solve the SIDE (Single Image Depth Estimation) task and the NVS (Novel View Synthesis) task, achieving excellent results in both synthetic and real-world scenarios. The application finds its scope in enabling greater understanding of the world with limited sensory capabilities (e.g., in robots) and in enhancing visual contents."
+            : hasVariant($state, "project", "envKnob")
+            ? "Game environment parameterised by a difficulty value to show the possibilities which an autonomous trainer agent can provide to a game developer in terms of automated processes during game development and enhancement of autonomous player agents."
+            : hasVariant($state, "project", "coRec")
+            ? 'Custom implementation of "Context-Aware Retrieval-based Deep Commit Message Generation" paper for automatic commit messages generation. The implementation mix Neural Machine Translation with a Retrieval based approach using Transformers modules for the encoder-decoder architecture. The work include also an analysis of the result and a survey about the task.'
+            : hasVariant($state, "project", "yaeOs")
+            ? "Yet another operating system. Implementation of an operating microkernel for ARM7 architecture systems. LL interaction with basic computer components with\ninterrupt handling and process scheduling. to make it more crunchy all functions are implemented with recursive approach."
+            : hasVariant($state, "project", "coinshoarder")
+            ? "Web platform for managing multi-currency cryptocurrency portfolios. It allows to monitor mining resources and sale markets.\nThe full stack was developed and implemented by myself: the Website is built in jQuery and PHP, whatchdogs in C++ then self hosted on a linux server. Born from personal needs the project has been expanded (for fun) to become a standalone platform for public use."
+            : hasVariant($state, "project", "puzzleSolver")
+            ? "My first approach to computer vision. Revision and improvement of an open source program for the visual recognition of geometric shapes applied to puzzles. It allows also the reconstruction of the original image by composition of pieces."
+            : hasVariant($state, "project", "movingObject")
+            ? "Starting from a video as input, the application returns the static background of the scene handling dynamism of the\nscene in time. The algorithm works on-the-fly without assumptions or preprocessing of the frames, both with static and moving camera videos."
+            : hasVariant($state, "project", "flatland")
+            ? "Team participation in the AICrowd Flatland challenge 2021. The goal was to deal with a problem of trains coordination and navigation in\na complex railway environment. A multi-agent reinforcement learning approach was adopted in our implementation."
+            : "This is a brief descriptiuon. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil"}
+        </div>
+      </div>
+      <div
+        data-plasmic-name={"sideCover"}
+        data-plasmic-override={overrides.sideCover}
+        className={classNames(projectcss.all, sty.sideCover, {
+          [sty.sideCoverproject_yaeOs]: hasVariant($state, "project", "yaeOs")
+        })}
+      >
+        <div
+          data-plasmic-name={"rectangle8"}
+          data-plasmic-override={overrides.rectangle8}
+          className={classNames(projectcss.all, sty.rectangle8, {
+            [sty.rectangle8project_envKnob]: hasVariant(
+              $state,
+              "project",
+              "envKnob"
+            ),
+            [sty.rectangle8project_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            ),
+            [sty.rectangle8project_movingObject]: hasVariant(
+              $state,
+              "project",
+              "movingObject"
+            ),
+            [sty.rectangle8project_twoWaySinth]: hasVariant(
+              $state,
+              "project",
+              "twoWaySinth"
+            )
+          })}
+        />
+
+        <div
+          data-plasmic-name={"reinforcementLearning"}
+          data-plasmic-override={overrides.reinforcementLearning}
+          className={classNames(projectcss.all, sty.reinforcementLearning, {
+            [sty.reinforcementLearningproject_flatland]: hasVariant(
+              $state,
+              "project",
+              "flatland"
+            ),
+            [sty.reinforcementLearningproject_twoWaySinth]: hasVariant(
+              $state,
+              "project",
+              "twoWaySinth"
+            )
+          })}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text___40Ew,
+              {
+                [sty.textproject_coRec___40Ew2S0Cn]: hasVariant(
                   $state,
                   "project",
                   "coRec"
                 ),
-                [sty.rectangle17project_coinshoarder]: hasVariant(
+                [sty.textproject_coinshoarder___40EwT9S5Q]: hasVariant(
                   $state,
                   "project",
                   "coinshoarder"
                 ),
-                [sty.rectangle17project_envKnob]: hasVariant(
+                [sty.textproject_envKnob___40EwLj7EF]: hasVariant(
                   $state,
                   "project",
                   "envKnob"
                 ),
-                [sty.rectangle17project_flatland]: hasVariant(
+                [sty.textproject_flatland___40EwZf0Uy]: hasVariant(
                   $state,
                   "project",
                   "flatland"
                 ),
-                [sty.rectangle17project_movingObject]: hasVariant(
+                [sty.textproject_movingObject___40Ew1Qen5]: hasVariant(
                   $state,
                   "project",
                   "movingObject"
                 ),
-                [sty.rectangle17project_puzzleSolver]: hasVariant(
+                [sty.textproject_puzzleSolver___40EwdhSqr]: hasVariant(
                   $state,
                   "project",
                   "puzzleSolver"
                 ),
-                [sty.rectangle17project_twoWaySinth]: hasVariant(
+                [sty.textproject_twoWaySinth___40Ew8Mrs3]: hasVariant(
                   $state,
                   "project",
                   "twoWaySinth"
                 ),
-                [sty.rectangle17project_yaeOs]: hasVariant(
+                [sty.textproject_yaeOs___40EwUw09H]: hasVariant(
                   $state,
                   "project",
                   "yaeOs"
                 )
-              })}
-            />
-
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zqi1Z,
-                {
-                  [sty.textproject_coRec__zqi1Z2S0Cn]: hasVariant(
-                    $state,
-                    "project",
-                    "coRec"
-                  ),
-                  [sty.textproject_coinshoarder__zqi1Zt9S5Q]: hasVariant(
-                    $state,
-                    "project",
-                    "coinshoarder"
-                  ),
-                  [sty.textproject_envKnob__zqi1ZLj7EF]: hasVariant(
-                    $state,
-                    "project",
-                    "envKnob"
-                  ),
-                  [sty.textproject_flatland__zqi1ZZf0Uy]: hasVariant(
-                    $state,
-                    "project",
-                    "flatland"
-                  ),
-                  [sty.textproject_movingObject__zqi1Z1Qen5]: hasVariant(
-                    $state,
-                    "project",
-                    "movingObject"
-                  ),
-                  [sty.textproject_puzzleSolver__zqi1ZdhSqr]: hasVariant(
-                    $state,
-                    "project",
-                    "puzzleSolver"
-                  ),
-                  [sty.textproject_twoWaySinth__zqi1Z8Mrs3]: hasVariant(
-                    $state,
-                    "project",
-                    "twoWaySinth"
-                  ),
-                  [sty.textproject_yaeOs__zqi1ZUw09H]: hasVariant(
-                    $state,
-                    "project",
-                    "yaeOs"
-                  )
-                }
-              )}
-            >
-              {hasVariant($state, "project", "twoWaySinth")
-                ? "Exploitation of the intrinsic information of a view to solve the SIDE (Single Image Depth Estimation) task and the NVS (Novel View Synthesis) task, achieving excellent results in both synthetic and real-world scenarios. The application finds its scope in enabling greater understanding of the world with limited sensory capabilities (e.g., in robots) and in enhancing visual contents."
-                : hasVariant($state, "project", "envKnob")
-                ? "Game environment parameterised by a difficulty value to show the possibilities which an autonomous trainer agent can provide to a game developer in terms of automated processes during game development and enhancement of autonomous player agents."
-                : hasVariant($state, "project", "coRec")
-                ? 'Custom implementation of "Context-Aware Retrieval-based Deep Commit Message Generation" paper for automatic commit messages generation. The implementation mix Neural Machine Translation with a Retrieval based approach using Transformers modules for the encoder-decoder architecture. The work include also an analysis of the result and a survey about the task.'
-                : hasVariant($state, "project", "yaeOs")
-                ? "Yet another operating system. Implementation of an operating microkernel for ARM7 architecture systems. LL interaction with basic computer components with\ninterrupt handling and process scheduling. to make it more crunchy all functions are implemented with recursive approach."
-                : hasVariant($state, "project", "coinshoarder")
-                ? "Web platform for managing multi-currency cryptocurrency portfolios. It allows to monitor mining resources and sale markets.\nThe full stack was developed and implemented by myself: the Website is built in jQuery and PHP, whatchdogs in C++ then self hosted on a linux server. Born from personal needs the project has been expanded (for fun) to become a standalone platform for public use."
-                : hasVariant($state, "project", "puzzleSolver")
-                ? "My first approach to computer vision. Revision and improvement of an open source program for the visual recognition of geometric shapes applied to puzzles. It allows also the reconstruction of the original image by composition of pieces."
-                : hasVariant($state, "project", "movingObject")
-                ? "Starting from a video as input, the application returns the static background of the scene handling dynamism of the\nscene in time. The algorithm works on-the-fly without assumptions or preprocessing of the frames, both with static and moving camera videos."
-                : hasVariant($state, "project", "flatland")
-                ? "Team participation in the AICrowd Flatland challenge 2021. The goal was to deal with a problem of trains coordination and navigation in\na complex railway environment. A multi-agent reinforcement learning approach was adopted in our implementation."
-                : "This is a brief descriptiuon. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil"}
-            </div>
+              }
+            )}
+          >
+            {hasVariant($state, "project", "twoWaySinth")
+              ? "Machine Vssion"
+              : hasVariant($state, "project", "envKnob")
+              ? "Reinforcement Learning"
+              : hasVariant($state, "project", "coRec")
+              ? "Natural Language Proce"
+              : hasVariant($state, "project", "yaeOs")
+              ? "Operative Systems"
+              : hasVariant($state, "project", "coinshoarder")
+              ? "Web Development"
+              : hasVariant($state, "project", "puzzleSolver")
+              ? "Computer Vision"
+              : hasVariant($state, "project", "movingObject")
+              ? "Computer Vision"
+              : hasVariant($state, "project", "flatland")
+              ? "Reinforcement Learning"
+              : "Reinforcement Learning"}
           </div>
-        ) : null}
-        {(triggers.focusWithin_root ? true : true) ? (
-          <div
-            data-plasmic-name={"sideCover"}
-            data-plasmic-override={overrides.sideCover}
-            className={classNames(projectcss.all, sty.sideCover, {
-              [sty.sideCoverproject_yaeOs]: hasVariant(
+        </div>
+        <div
+          data-plasmic-name={"barcode2"}
+          data-plasmic-override={overrides.barcode2}
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.barcode2,
+            {
+              [sty.barcode2project_coRec]: hasVariant(
                 $state,
                 "project",
-                "yaeOs"
+                "coRec"
+              ),
+              [sty.barcode2project_envKnob]: hasVariant(
+                $state,
+                "project",
+                "envKnob"
+              ),
+              [sty.barcode2project_twoWaySinth]: hasVariant(
+                $state,
+                "project",
+                "twoWaySinth"
               )
-            })}
-          >
-            <div
-              data-plasmic-name={"rectangle8"}
-              data-plasmic-override={overrides.rectangle8}
-              className={classNames(projectcss.all, sty.rectangle8, {
-                [sty.rectangle8project_envKnob]: hasVariant(
-                  $state,
-                  "project",
-                  "envKnob"
-                ),
-                [sty.rectangle8project_flatland]: hasVariant(
-                  $state,
-                  "project",
-                  "flatland"
-                ),
-                [sty.rectangle8project_movingObject]: hasVariant(
-                  $state,
-                  "project",
-                  "movingObject"
-                ),
-                [sty.rectangle8project_twoWaySinth]: hasVariant(
-                  $state,
-                  "project",
-                  "twoWaySinth"
-                )
-              })}
-            />
+            }
+          )}
+        >
+          {"Reinforcement Learning"}
+        </div>
+        <div
+          data-plasmic-name={"line12"}
+          data-plasmic-override={overrides.line12}
+          className={classNames(projectcss.all, sty.line12, {
+            [sty.line12project_coinshoarder]: hasVariant(
+              $state,
+              "project",
+              "coinshoarder"
+            ),
+            [sty.line12project_twoWaySinth]: hasVariant(
+              $state,
+              "project",
+              "twoWaySinth"
+            )
+          })}
+        />
 
-            <div
-              data-plasmic-name={"reinforcementLearning"}
-              data-plasmic-override={overrides.reinforcementLearning}
-              className={classNames(projectcss.all, sty.reinforcementLearning, {
-                [sty.reinforcementLearningproject_flatland]: hasVariant(
+        <div
+          data-plasmic-name={"line3"}
+          data-plasmic-override={overrides.line3}
+          className={classNames(projectcss.all, sty.line3)}
+        />
+
+        <div
+          data-plasmic-name={"_2"}
+          data-plasmic-override={overrides._2}
+          className={classNames(projectcss.all, sty._2, {
+            [sty._2project_flatland]: hasVariant($state, "project", "flatland")
+          })}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__ihHl,
+              {
+                [sty.textproject_coRec__ihHl2S0Cn]: hasVariant(
                   $state,
                   "project",
-                  "flatland"
+                  "coRec"
                 ),
-                [sty.reinforcementLearningproject_twoWaySinth]: hasVariant(
-                  $state,
-                  "project",
-                  "twoWaySinth"
-                )
-              })}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___40Ew,
-                  {
-                    [sty.textproject_coRec___40Ew2S0Cn]: hasVariant(
-                      $state,
-                      "project",
-                      "coRec"
-                    ),
-                    [sty.textproject_coinshoarder___40EwT9S5Q]: hasVariant(
-                      $state,
-                      "project",
-                      "coinshoarder"
-                    ),
-                    [sty.textproject_envKnob___40EwLj7EF]: hasVariant(
-                      $state,
-                      "project",
-                      "envKnob"
-                    ),
-                    [sty.textproject_flatland___40EwZf0Uy]: hasVariant(
-                      $state,
-                      "project",
-                      "flatland"
-                    ),
-                    [sty.textproject_movingObject___40Ew1Qen5]: hasVariant(
-                      $state,
-                      "project",
-                      "movingObject"
-                    ),
-                    [sty.textproject_puzzleSolver___40EwdhSqr]: hasVariant(
-                      $state,
-                      "project",
-                      "puzzleSolver"
-                    ),
-                    [sty.textproject_twoWaySinth___40Ew8Mrs3]: hasVariant(
-                      $state,
-                      "project",
-                      "twoWaySinth"
-                    ),
-                    [sty.textproject_yaeOs___40EwUw09H]: hasVariant(
-                      $state,
-                      "project",
-                      "yaeOs"
-                    )
-                  }
-                )}
-              >
-                {hasVariant($state, "project", "twoWaySinth")
-                  ? "Machine Vssion"
-                  : hasVariant($state, "project", "envKnob")
-                  ? "Reinforcement Learning"
-                  : hasVariant($state, "project", "coRec")
-                  ? "Natural Language Proce"
-                  : hasVariant($state, "project", "yaeOs")
-                  ? "Operative Systems"
-                  : hasVariant($state, "project", "coinshoarder")
-                  ? "Web Development"
-                  : hasVariant($state, "project", "puzzleSolver")
-                  ? "Computer Vision"
-                  : hasVariant($state, "project", "movingObject")
-                  ? "Computer Vision"
-                  : hasVariant($state, "project", "flatland")
-                  ? "Reinforcement Learning"
-                  : "Reinforcement Learning"}
-              </div>
-            </div>
-            <div
-              data-plasmic-name={"barcode2"}
-              data-plasmic-override={overrides.barcode2}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.barcode2,
-                {
-                  [sty.barcode2project_coRec]: hasVariant(
-                    $state,
-                    "project",
-                    "coRec"
-                  ),
-                  [sty.barcode2project_envKnob]: hasVariant(
-                    $state,
-                    "project",
-                    "envKnob"
-                  ),
-                  [sty.barcode2project_twoWaySinth]: hasVariant(
-                    $state,
-                    "project",
-                    "twoWaySinth"
-                  )
-                }
-              )}
-            >
-              {"Reinforcement Learning"}
-            </div>
-            <div
-              data-plasmic-name={"line12"}
-              data-plasmic-override={overrides.line12}
-              className={classNames(projectcss.all, sty.line12, {
-                [sty.line12project_coinshoarder]: hasVariant(
+                [sty.textproject_coinshoarder__ihHlT9S5Q]: hasVariant(
                   $state,
                   "project",
                   "coinshoarder"
                 ),
-                [sty.line12project_twoWaySinth]: hasVariant(
+                [sty.textproject_envKnob__ihHlLj7EF]: hasVariant(
                   $state,
                   "project",
-                  "twoWaySinth"
-                )
-              })}
-            />
-
-            <div
-              data-plasmic-name={"line3"}
-              data-plasmic-override={overrides.line3}
-              className={classNames(projectcss.all, sty.line3)}
-            />
-
-            <div
-              data-plasmic-name={"_2"}
-              data-plasmic-override={overrides._2}
-              className={classNames(projectcss.all, sty._2, {
-                [sty._2project_flatland]: hasVariant(
+                  "envKnob"
+                ),
+                [sty.textproject_flatland__ihHlZf0Uy]: hasVariant(
                   $state,
                   "project",
                   "flatland"
+                ),
+                [sty.textproject_movingObject__ihHl1Qen5]: hasVariant(
+                  $state,
+                  "project",
+                  "movingObject"
+                ),
+                [sty.textproject_puzzleSolver__ihHlDhSqr]: hasVariant(
+                  $state,
+                  "project",
+                  "puzzleSolver"
+                ),
+                [sty.textproject_twoWaySinth__ihHl8Mrs3]: hasVariant(
+                  $state,
+                  "project",
+                  "twoWaySinth"
+                ),
+                [sty.textproject_yaeOs__ihHlUw09H]: hasVariant(
+                  $state,
+                  "project",
+                  "yaeOs"
                 )
-              })}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ihHl,
-                  {
-                    [sty.textproject_coRec__ihHl2S0Cn]: hasVariant(
-                      $state,
-                      "project",
-                      "coRec"
-                    ),
-                    [sty.textproject_coinshoarder__ihHlT9S5Q]: hasVariant(
-                      $state,
-                      "project",
-                      "coinshoarder"
-                    ),
-                    [sty.textproject_envKnob__ihHlLj7EF]: hasVariant(
-                      $state,
-                      "project",
-                      "envKnob"
-                    ),
-                    [sty.textproject_flatland__ihHlZf0Uy]: hasVariant(
-                      $state,
-                      "project",
-                      "flatland"
-                    ),
-                    [sty.textproject_movingObject__ihHl1Qen5]: hasVariant(
-                      $state,
-                      "project",
-                      "movingObject"
-                    ),
-                    [sty.textproject_puzzleSolver__ihHlDhSqr]: hasVariant(
-                      $state,
-                      "project",
-                      "puzzleSolver"
-                    ),
-                    [sty.textproject_twoWaySinth__ihHl8Mrs3]: hasVariant(
-                      $state,
-                      "project",
-                      "twoWaySinth"
-                    ),
-                    [sty.textproject_yaeOs__ihHlUw09H]: hasVariant(
-                      $state,
-                      "project",
-                      "yaeOs"
-                    )
-                  }
-                )}
-              >
-                {hasVariant($state, "project", "twoWaySinth")
-                  ? "8"
-                  : hasVariant($state, "project", "envKnob")
-                  ? "7"
-                  : hasVariant($state, "project", "coRec")
-                  ? "6"
-                  : hasVariant($state, "project", "yaeOs")
-                  ? "2"
-                  : hasVariant($state, "project", "coinshoarder")
-                  ? "1"
-                  : hasVariant($state, "project", "puzzleSolver")
-                  ? "3"
-                  : hasVariant($state, "project", "movingObject")
-                  ? "4"
-                  : hasVariant($state, "project", "flatland")
-                  ? "5"
-                  : "1"}
-              </div>
-            </div>
+              }
+            )}
+          >
+            {hasVariant($state, "project", "twoWaySinth")
+              ? "8"
+              : hasVariant($state, "project", "envKnob")
+              ? "7"
+              : hasVariant($state, "project", "coRec")
+              ? "6"
+              : hasVariant($state, "project", "yaeOs")
+              ? "2"
+              : hasVariant($state, "project", "coinshoarder")
+              ? "1"
+              : hasVariant($state, "project", "puzzleSolver")
+              ? "3"
+              : hasVariant($state, "project", "movingObject")
+              ? "4"
+              : hasVariant($state, "project", "flatland")
+              ? "5"
+              : "1"}
           </div>
-        ) : null}
+        </div>
       </div>
-    ) : null
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -1108,7 +1041,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   frontCover: "div";
@@ -1165,7 +1098,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicBook__ArgProps,
           internalVariantPropNames: PlasmicBook__VariantProps
         }),

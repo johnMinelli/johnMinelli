@@ -20,9 +20,6 @@
 .frame2 > picture > img {
   object-fit: fill;
 }
-.frame2 > :global(.__wab_img-spacer) > img {
-  object-fit: fill;
-}
 .root:hover .frame2 {
   display: block !important;
 }
@@ -38,9 +35,6 @@
   min-height: 0;
 }
 .frame1 > picture > img {
-  object-fit: fill;
-}
-.frame1 > :global(.__wab_img-spacer) > img {
   object-fit: fill;
 }
 .root:hover .frame1 {

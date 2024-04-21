@@ -67,7 +67,6 @@
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)
     translateX(125px) translateY(0px) translateZ(0px);
   transform-style: preserve-3d;
-  display: block;
   padding: 0px;
 }
 .root:hover .frontCover * {
@@ -75,7 +74,6 @@
 }
 .root:focus-within .frontCover {
   transform-style: preserve-3d;
-  display: block;
   outline: none;
 }
 .root:focus-within .frontCover * {
@@ -113,9 +111,6 @@
 .img__wc11B > picture > img {
   object-fit: cover;
 }
-.img__wc11B > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .root:focus-within .img__wc11B {
   display: none !important;
   outline: none;
@@ -134,9 +129,6 @@
   min-height: 0;
 }
 .img__dA0Ni > picture > img {
-  object-fit: cover;
-}
-.img__dA0Ni > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .root:focus-within .img__dA0Ni {

@@ -48,9 +48,6 @@
 .printer > picture > img {
   object-fit: cover;
 }
-.printer > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 @media (max-width: 1280px) {
   .printer {
     width: 100%;
@@ -140,9 +137,6 @@
   display: none !important;
 }
 .longerSheet > picture > img {
-  object-fit: cover;
-}
-.longerSheet > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 @media (min-width: 0px) and (max-width: 450px) {
@@ -268,7 +262,7 @@
 .linkprintedPapers_nvs {
   display: flex;
 }
-.img {
+.img__iLex {
   position: absolute;
   object-fit: cover;
   max-width: 100%;
@@ -281,37 +275,116 @@
   height: 100%;
   min-width: 0;
   min-height: 0;
-  display: block !important;
   -webkit-backdrop-filter: none;
 }
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
+.img__iLex > picture > img {
   object-fit: cover;
 }
 @media (max-width: 1280px) {
-  .img {
+  .img__iLex {
     top: 0px;
     left: 0px;
-    display: block !important;
   }
 }
 @media (min-width: 0px) and (max-width: 850px) {
-  .img {
+  .img__iLex {
     left: 6px;
     top: 4px;
   }
 }
 @media (min-width: 0px) and (max-width: 450px) {
-  .img {
+  .img__iLex {
     left: 0px;
     top: 0px;
-    display: block !important;
   }
 }
-.imgprintedPapers_nvs {
-  display: block !important;
+.conf {
+  position: absolute;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 39px;
+  height: 18px;
+  max-width: 100%;
+  left: 261px;
+  top: 21px;
+  margin-right: 0px;
+  cursor: pointer;
+  display: none;
+  padding: 0px;
+}
+@media (max-width: 1280px) {
+  .conf {
+    top: 0px;
+    left: 0px;
+    width: 36px;
+    height: 16px;
+    display: none;
+  }
+}
+@media (min-width: 0px) and (max-width: 850px) {
+  .conf {
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 14px;
+    display: none;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .conf {
+    left: 0px;
+    top: 0px;
+    display: none;
+  }
+}
+.confprintedPapers_nvs {
+  display: flex;
+}
+.confprintedPapers_leggedLocomotion {
+  width: 46px;
+  display: flex;
+}
+.img___6Sane {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  left: 0px;
+  top: -9px;
+  width: 100%;
+  filter: grayscale(100%);
+  transform: skewX(-4deg) skewY(0deg);
+  backdrop-filter: none;
+  height: 31px;
+  min-width: 0;
+  -webkit-backdrop-filter: none;
+}
+.img___6Sane > picture > img {
+  object-fit: cover;
+}
+@media (max-width: 1280px) {
+  .img___6Sane {
+    top: 0px;
+    left: 0px;
+  }
+}
+@media (min-width: 0px) and (max-width: 850px) {
+  .img___6Sane {
+    left: 6px;
+    top: 4px;
+  }
+}
+@media (min-width: 0px) and (max-width: 450px) {
+  .img___6Sane {
+    left: 0px;
+    top: 0px;
+  }
+}
+.imgprintedPapers_leggedLocomotion___6SaneNqIl {
+  perspective: 0px;
+  transform: perspective(0px) skewX(-4deg) skewY(0deg);
+  transform-origin: 0% 0%;
+  height: 12px;
 }
 .sheetWheel {
   display: block;

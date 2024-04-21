@@ -13,25 +13,47 @@
 
 import * as React from "react";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -39,7 +61,7 @@ import projectcss from "./plasmic_john_minelli_page.module.css"; // plasmic-impo
 import sty from "./PlasmicSocialLink.module.css"; // plasmic-import: hx5Zt00vBr/css
 
 import GithubSvgIcon from "./icons/PlasmicIcon__GithubSvg"; // plasmic-import: dNovjR86D5/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Amok0_pLidVdv/icon
+import XLogo2023OriginalsvgIcon from "./icons/PlasmicIcon__XLogo2023Originalsvg"; // plasmic-import: HNBJM98fZ7O1/icon
 import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: 67Imrh2ba/icon
 
 createPlasmicElementProxy;
@@ -60,7 +82,7 @@ type ArgPropType = keyof PlasmicSocialLink__ArgsType;
 export const PlasmicSocialLink__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicSocialLink__OverridesType = {
-  root?: p.Flex<"a">;
+  root?: Flex__<"a">;
 };
 
 export interface DefaultSocialLinkProps {
@@ -68,13 +90,7 @@ export interface DefaultSocialLinkProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicSocialLink__RenderFunc(props: {
   variants: PlasmicSocialLink__VariantsArgs;
@@ -91,13 +107,13 @@ function PlasmicSocialLink__RenderFunc(props: {
     ...variants
   };
 
-  const $ctx = ph.useDataEnv?.() || {};
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = p.useCurrentUser?.() || {};
+  const currentUser = useCurrentUser?.() || {};
 
-  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "social",
@@ -108,7 +124,7 @@ function PlasmicSocialLink__RenderFunc(props: {
     ],
     [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, {
+  const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
     $queries: {},
@@ -137,62 +153,52 @@ function PlasmicSocialLink__RenderFunc(props: {
       )}
       href={
         hasVariant($state, "social", "linkedin")
-          ? ("https://www.linkedin.com/in/giovanni-minelli-6618731b6/" as const)
+          ? "https://www.linkedin.com/in/giovanni-minelli-6618731b6/"
           : hasVariant($state, "social", "twitter")
-          ? ("https://twitter.com/JohnMinelli3" as const)
+          ? "https://twitter.com/JohnMinelli3"
           : hasVariant($state, "social", "git")
-          ? ("https://github.com/johnMinelli" as const)
-          : ("www.google.com." as const)
+          ? "https://github.com/johnMinelli"
+          : "www.google.com."
       }
-      target={"_blank" as const}
+      target={"_blank"}
     >
-      {(
-        hasVariant($state, "social", "linkedin")
-          ? true
-          : hasVariant($state, "social", "twitter")
-          ? true
-          : true
-      ) ? (
-        <GithubSvgIcon
-          className={classNames(projectcss.all, sty.svg__bE6O, {
-            [sty.svgsocial_linkedin__bE6OjR7Wz]: hasVariant(
-              $state,
-              "social",
-              "linkedin"
-            ),
-            [sty.svgsocial_twitter__bE6OeUvvh]: hasVariant(
-              $state,
-              "social",
-              "twitter"
-            )
-          })}
-          role={"img"}
-        />
-      ) : null}
-      {(hasVariant($state, "social", "twitter") ? true : true) ? (
-        <IconIcon
-          className={classNames(projectcss.all, sty.svg__w2OP, {
-            [sty.svgsocial_twitter__w2OPEUvvh]: hasVariant(
-              $state,
-              "social",
-              "twitter"
-            )
-          })}
-          role={"img"}
-        />
-      ) : null}
-      {(hasVariant($state, "social", "linkedin") ? true : true) ? (
-        <LinkedinIcon
-          className={classNames(projectcss.all, sty.svg__fx80U, {
-            [sty.svgsocial_linkedin__fx80UjR7Wz]: hasVariant(
-              $state,
-              "social",
-              "linkedin"
-            )
-          })}
-          role={"img"}
-        />
-      ) : null}
+      <GithubSvgIcon
+        className={classNames(projectcss.all, sty.svg__bE6O, {
+          [sty.svgsocial_linkedin__bE6OjR7Wz]: hasVariant(
+            $state,
+            "social",
+            "linkedin"
+          ),
+          [sty.svgsocial_twitter__bE6OeUvvh]: hasVariant(
+            $state,
+            "social",
+            "twitter"
+          )
+        })}
+        role={"img"}
+      />
+
+      <XLogo2023OriginalsvgIcon
+        className={classNames(projectcss.all, sty.svg__w2OP, {
+          [sty.svgsocial_twitter__w2OPEUvvh]: hasVariant(
+            $state,
+            "social",
+            "twitter"
+          )
+        })}
+        role={"img"}
+      />
+
+      <LinkedinIcon
+        className={classNames(projectcss.all, sty.svg__fx80U, {
+          [sty.svgsocial_linkedin__fx80UjR7Wz]: hasVariant(
+            $state,
+            "social",
+            "linkedin"
+          )
+        })}
+        role={"img"}
+      />
     </a>
   ) as React.ReactElement | null;
 }
@@ -202,7 +208,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "a";
 };
@@ -241,7 +247,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicSocialLink__ArgProps,
           internalVariantPropNames: PlasmicSocialLink__VariantProps
         }),

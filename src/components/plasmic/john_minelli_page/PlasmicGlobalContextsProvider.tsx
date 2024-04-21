@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { hasVariant, ensureGlobalVariants } from "@plasmicapp/react-web";
-import { ContentStackCredentialsProvider } from "@plasmicpkgs/plasmic-content-stack"; // plasmic-import: bk5RNde8kLM/codeComponent
+import { ContentStackCredentialsProvider } from "@plasmicpkgs/plasmic-content-stack";
 
 export interface GlobalContextsProviderProps {
   children?: React.ReactElement;
@@ -30,19 +30,19 @@ export default function GlobalContextsProvider(
         contentStackCredentialsProviderProps &&
         "accessToken" in contentStackCredentialsProviderProps
           ? contentStackCredentialsProviderProps.accessToken!
-          : ("cs5b69faf35efdebd91d08bcf4" as const)
+          : "cs5b69faf35efdebd91d08bcf4"
       }
       apiKey={
         contentStackCredentialsProviderProps &&
         "apiKey" in contentStackCredentialsProviderProps
           ? contentStackCredentialsProviderProps.apiKey!
-          : ("blt02f7b45378b008ee" as const)
+          : "blt02f7b45378b008ee"
       }
       environment={
         contentStackCredentialsProviderProps &&
         "environment" in contentStackCredentialsProviderProps
           ? contentStackCredentialsProviderProps.environment!
-          : ("production" as const)
+          : "production"
       }
     >
       {children}

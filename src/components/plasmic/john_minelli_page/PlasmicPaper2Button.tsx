@@ -13,25 +13,47 @@
 
 import * as React from "react";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -55,9 +77,9 @@ type ArgPropType = keyof PlasmicPaper2Button__ArgsType;
 export const PlasmicPaper2Button__ArgProps = new Array<ArgPropType>("onPress");
 
 export type PlasmicPaper2Button__OverridesType = {
-  root?: p.Flex<"div">;
-  frame2?: p.Flex<typeof p.PlasmicImg>;
-  frame1?: p.Flex<typeof p.PlasmicImg>;
+  root?: Flex__<"div">;
+  frame2?: Flex__<typeof PlasmicImg__>;
+  frame1?: Flex__<typeof PlasmicImg__>;
 };
 
 export interface DefaultPaper2ButtonProps {
@@ -65,13 +87,7 @@ export interface DefaultPaper2ButtonProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicPaper2Button__RenderFunc(props: {
   variants: PlasmicPaper2Button__VariantsArgs;
@@ -88,11 +104,11 @@ function PlasmicPaper2Button__RenderFunc(props: {
     ...variants
   };
 
-  const $ctx = ph.useDataEnv?.() || {};
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = p.useCurrentUser?.() || {};
+  const currentUser = useCurrentUser?.() || {};
 
   const [isRootHover, triggerRootHoverProps] = useTrigger("useHover", {});
   const triggers = {
@@ -100,67 +116,62 @@ function PlasmicPaper2Button__RenderFunc(props: {
   };
 
   return (
-    true ? (
-      <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          sty.root
-        )}
-        data-plasmic-trigger-props={[triggerRootHoverProps]}
-      >
-        {(triggers.hover_root ? true : true) ? (
-          <p.PlasmicImg
-            data-plasmic-name={"frame2"}
-            data-plasmic-override={overrides.frame2}
-            alt={""}
-            className={classNames(sty.frame2)}
-            displayHeight={"100%" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"none" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"100%" as const}
-            loading={"lazy" as const}
-            onClick={args.onPress}
-            src={{
-              src: r2PngPuqjQcwy0,
-              fullWidth: 25,
-              fullHeight: 18,
-              aspectRatio: undefined
-            }}
-          />
-        ) : null}
-        {(triggers.hover_root ? true : true) ? (
-          <p.PlasmicImg
-            data-plasmic-name={"frame1"}
-            data-plasmic-override={overrides.frame1}
-            alt={""}
-            className={classNames(sty.frame1)}
-            displayHeight={"100%" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"none" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"100%" as const}
-            loading={"lazy" as const}
-            src={{
-              src: r1PngZyKs67Sbe,
-              fullWidth: 25,
-              fullHeight: 18,
-              aspectRatio: undefined
-            }}
-          />
-        ) : null}
-      </div>
-    ) : null
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        sty.root
+      )}
+      data-plasmic-trigger-props={[triggerRootHoverProps]}
+    >
+      <PlasmicImg__
+        data-plasmic-name={"frame2"}
+        data-plasmic-override={overrides.frame2}
+        alt={""}
+        className={classNames(sty.frame2)}
+        displayHeight={"100%"}
+        displayMaxHeight={"none"}
+        displayMaxWidth={"none"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={"100%"}
+        loading={"lazy"}
+        onClick={args.onPress}
+        src={{
+          src: r2PngPuqjQcwy0,
+          fullWidth: 25,
+          fullHeight: 18,
+          aspectRatio: undefined
+        }}
+      />
+
+      <PlasmicImg__
+        data-plasmic-name={"frame1"}
+        data-plasmic-override={overrides.frame1}
+        alt={""}
+        className={classNames(sty.frame1)}
+        displayHeight={"100%"}
+        displayMaxHeight={"none"}
+        displayMaxWidth={"none"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={"100%"}
+        loading={"lazy"}
+        src={{
+          src: r1PngZyKs67Sbe,
+          fullWidth: 25,
+          fullHeight: 18,
+          aspectRatio: undefined
+        }}
+      />
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -171,11 +182,11 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  frame2: typeof p.PlasmicImg;
-  frame1: typeof p.PlasmicImg;
+  frame2: typeof PlasmicImg__;
+  frame1: typeof PlasmicImg__;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -212,7 +223,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicPaper2Button__ArgProps,
           internalVariantPropNames: PlasmicPaper2Button__VariantProps
         }),

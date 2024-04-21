@@ -148,6 +148,29 @@
   --mixin-WN7RIwhLHQlnt_white-space: pre-wrap;
 }
 
+.plasmic_mixins {
+  --mixin-H8pNhZkC3_W56_white-space: pre-wrap;
+  --plasmic-mixin-nav-link_white-space: var(--mixin-H8pNhZkC3_W56_white-space);
+  --mixin-HIi3X167LOFas_white-space: pre-wrap;
+  --plasmic-mixin-unnamed-mixin_white-space: var(
+    --mixin-HIi3X167LOFas_white-space
+  );
+  --mixin-8kgjmJfX3TD2S_white-space: pre-wrap;
+  --plasmic-mixin-label_white-space: var(--mixin-8kgjmJfX3TD2S_white-space);
+  --mixin-BS5E3vcBa3jQG_white-space: pre-wrap;
+  --plasmic-mixin-right-column_white-space: var(
+    --mixin-BS5E3vcBa3jQG_white-space
+  );
+  --mixin-QVWrIibnlORNG_white-space: pre-wrap;
+  --plasmic-mixin-no-underline_white-space: var(
+    --mixin-QVWrIibnlORNG_white-space
+  );
+  --mixin-EsQpTgHmY_white-space: pre-wrap;
+  --plasmic-mixin-unnamed-mixin-2_white-space: var(
+    --mixin-EsQpTgHmY_white-space
+  );
+}
+
 :where(.all) {
   display: block;
   white-space: inherit;

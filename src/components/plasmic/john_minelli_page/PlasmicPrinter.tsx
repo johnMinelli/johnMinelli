@@ -13,25 +13,48 @@
 
 import * as React from "react";
 
-import * as p from "@plasmicapp/react-web";
-import * as ph from "@plasmicapp/react-web/lib/host";
-
 import {
-  hasVariant,
-  classNames,
-  wrapWithClassName,
-  createPlasmicElementProxy,
-  makeFragment,
+  Flex as Flex__,
   MultiChoiceArg,
+  PlasmicDataSourceContextProvider as PlasmicDataSourceContextProvider__,
+  PlasmicIcon as PlasmicIcon__,
+  PlasmicImg as PlasmicImg__,
+  PlasmicLink as PlasmicLink__,
+  PlasmicPageGuard as PlasmicPageGuard__,
   SingleBooleanChoiceArg,
   SingleChoiceArg,
-  pick,
-  omit,
-  useTrigger,
+  Stack as Stack__,
   StrictProps,
+  Trans as Trans__,
+  classNames,
+  createPlasmicElementProxy,
   deriveRenderOpts,
-  ensureGlobalVariants
+  ensureGlobalVariants,
+  generateOnMutateForSpec,
+  generateStateOnChangeProp,
+  generateStateOnChangePropForCodeComponents,
+  generateStateValueProp,
+  get as $stateGet,
+  hasVariant,
+  initializeCodeComponentStates,
+  initializePlasmicStates,
+  makeFragment,
+  omit,
+  pick,
+  renderPlasmicSlot,
+  set as $stateSet,
+  useCurrentUser,
+  useDollarState,
+  usePlasmicTranslator,
+  useTrigger,
+  wrapWithClassName
 } from "@plasmicapp/react-web";
+import {
+  DataCtxReader as DataCtxReader__,
+  useDataEnv,
+  useGlobalActions
+} from "@plasmicapp/react-web/lib/host";
+
 import Paper1Button from "../../Paper1Button"; // plasmic-import: DiDoqGTUiD/component
 import Paper2Button from "../../Paper2Button"; // plasmic-import: N0wwUZYvk9/component
 
@@ -45,6 +68,8 @@ import sty from "./PlasmicPrinter.module.css"; // plasmic-import: ktUZWyedPGv/cs
 import imageRqSlXdSwk from "./images/image.svg"; // plasmic-import: rqSlXDSwk/picture
 import image10Beg4PkDLy from "./images/image10.svg"; // plasmic-import: BEG4pkDLy/picture
 import image8TwfgTt7W from "./images/image8.svg"; // plasmic-import: TwfgTT-7w/picture
+import iros23PngFoCZosGEstay from "./images/iros23Png.png"; // plasmic-import: foCZosGEstay/picture
+import imet23PngDrDtl7NfwIjZ from "./images/imet23Png.png"; // plasmic-import: drDtl7nfwIjZ/picture
 
 createPlasmicElementProxy;
 
@@ -70,16 +95,16 @@ export const PlasmicPrinter__ArgProps = new Array<ArgPropType>(
 );
 
 export type PlasmicPrinter__OverridesType = {
-  root?: p.Flex<"div">;
-  printer?: p.Flex<typeof p.PlasmicImg>;
-  nvsButton?: p.Flex<typeof Paper1Button>;
-  legButton?: p.Flex<typeof Paper2Button>;
-  longerSheet?: p.Flex<typeof p.PlasmicImg>;
-  printedArea?: p.Flex<"div">;
-  text?: p.Flex<"div">;
-  link?: p.Flex<"a">;
-  img?: p.Flex<typeof p.PlasmicImg>;
-  sheetWheel?: p.Flex<"div">;
+  root?: Flex__<"div">;
+  printer?: Flex__<typeof PlasmicImg__>;
+  nvsButton?: Flex__<typeof Paper1Button>;
+  legButton?: Flex__<typeof Paper2Button>;
+  longerSheet?: Flex__<typeof PlasmicImg__>;
+  printedArea?: Flex__<"div">;
+  text?: Flex__<"div">;
+  link?: Flex__<"a">;
+  conf?: Flex__<"a">;
+  sheetWheel?: Flex__<"div">;
 };
 
 export interface DefaultPrinterProps {
@@ -89,13 +114,7 @@ export interface DefaultPrinterProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicPrinter__RenderFunc(props: {
   variants: PlasmicPrinter__VariantsArgs;
@@ -112,13 +131,13 @@ function PlasmicPrinter__RenderFunc(props: {
     ...variants
   };
 
-  const $ctx = ph.useDataEnv?.() || {};
+  const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
-  const currentUser = p.useCurrentUser?.() || {};
+  const currentUser = useCurrentUser?.() || {};
 
-  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "arxivLink",
@@ -137,7 +156,7 @@ function PlasmicPrinter__RenderFunc(props: {
     ],
     [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, {
+  const $state = useDollarState(stateSpecs, {
     $props,
     $ctx,
     $queries: {},
@@ -149,672 +168,470 @@ function PlasmicPrinter__RenderFunc(props: {
   });
 
   return (
-    true ? (
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        sty.root,
+        {
+          [sty.rootprintedPapers_nvs]: hasVariant(
+            $state,
+            "printedPapers",
+            "nvs"
+          )
+        }
+      )}
+    >
+      <PlasmicImg__
+        data-plasmic-name={"printer"}
+        data-plasmic-override={overrides.printer}
+        alt={""}
+        className={classNames(sty.printer, {
+          [sty.printerprintedPapers_leggedLocomotion]: hasVariant(
+            $state,
+            "printedPapers",
+            "leggedLocomotion"
+          ),
+          [sty.printerprintedPapers_nvs]: hasVariant(
+            $state,
+            "printedPapers",
+            "nvs"
+          )
+        })}
+        displayHeight={
+          hasVariant(globalVariants, "screen", "mobileOnly")
+            ? "158px"
+            : hasVariant(globalVariants, "screen", "laptop")
+            ? "auto"
+            : "100%"
+        }
+        displayMaxHeight={"none"}
+        displayMaxWidth={"100%"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={
+          hasVariant(globalVariants, "screen", "mobileOnly")
+            ? "320px"
+            : hasVariant(globalVariants, "screen", "laptop")
+            ? "100%"
+            : "100%"
+        }
+        loading={"lazy"}
+        src={{
+          src: imageRqSlXdSwk,
+          fullWidth: 299,
+          fullHeight: 150,
+          aspectRatio: 1.995146
+        }}
+      />
+
+      <Paper1Button
+        data-plasmic-name={"nvsButton"}
+        data-plasmic-override={overrides.nvsButton}
+        className={classNames("__wab_instance", sty.nvsButton, {
+          [sty.nvsButtonprintedPapers_nvs]: hasVariant(
+            $state,
+            "printedPapers",
+            "nvs"
+          )
+        })}
+        onPress={async event => {
+          const $steps = {};
+
+          $steps["updatePrintedPapers"] = true
+            ? (() => {
+                const actionArgs = {
+                  vgroup: "printedPapers",
+                  operation: 0,
+                  value: "nvs"
+                };
+                return (({ vgroup, value }) => {
+                  if (typeof value === "string") {
+                    value = [value];
+                  }
+
+                  $stateSet($state, vgroup, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updatePrintedPapers"] != null &&
+            typeof $steps["updatePrintedPapers"] === "object" &&
+            typeof $steps["updatePrintedPapers"].then === "function"
+          ) {
+            $steps["updatePrintedPapers"] = await $steps["updatePrintedPapers"];
+          }
+
+          $steps["updateArxivLink"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["arxivLink"]
+                  },
+                  operation: 0,
+                  value: "https://arxiv.org/abs/2308.14108"
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateArxivLink"] != null &&
+            typeof $steps["updateArxivLink"] === "object" &&
+            typeof $steps["updateArxivLink"].then === "function"
+          ) {
+            $steps["updateArxivLink"] = await $steps["updateArxivLink"];
+          }
+        }}
+      />
+
+      <Paper2Button
+        data-plasmic-name={"legButton"}
+        data-plasmic-override={overrides.legButton}
+        className={classNames("__wab_instance", sty.legButton, {
+          [sty.legButtonprintedPapers_leggedLocomotion]: hasVariant(
+            $state,
+            "printedPapers",
+            "leggedLocomotion"
+          ),
+          [sty.legButtonprintedPapers_nvs]: hasVariant(
+            $state,
+            "printedPapers",
+            "nvs"
+          )
+        })}
+        onPress={async event => {
+          const $steps = {};
+
+          $steps["updatePrintedPapers"] = true
+            ? (() => {
+                const actionArgs = {
+                  vgroup: "printedPapers",
+                  operation: 0,
+                  value: "leggedLocomotion"
+                };
+                return (({ vgroup, value }) => {
+                  if (typeof value === "string") {
+                    value = [value];
+                  }
+
+                  $stateSet($state, vgroup, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updatePrintedPapers"] != null &&
+            typeof $steps["updatePrintedPapers"] === "object" &&
+            typeof $steps["updatePrintedPapers"].then === "function"
+          ) {
+            $steps["updatePrintedPapers"] = await $steps["updatePrintedPapers"];
+          }
+
+          $steps["updateArxivLink"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["arxivLink"]
+                  },
+                  operation: 1
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, undefined);
+                  return undefined;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateArxivLink"] != null &&
+            typeof $steps["updateArxivLink"] === "object" &&
+            typeof $steps["updateArxivLink"].then === "function"
+          ) {
+            $steps["updateArxivLink"] = await $steps["updateArxivLink"];
+          }
+        }}
+      />
+
+      <PlasmicImg__
+        data-plasmic-name={"longerSheet"}
+        data-plasmic-override={overrides.longerSheet}
+        alt={""}
+        className={classNames(sty.longerSheet)}
+        displayHeight={"102px"}
+        displayMaxHeight={"none"}
+        displayMaxWidth={"100%"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={"auto"}
+        loading={"lazy"}
+        src={{
+          src: image10Beg4PkDLy,
+          fullWidth: 300,
+          fullHeight: 139,
+          aspectRatio: 2.152174
+        }}
+      />
+
       <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          sty.root,
-          {
-            [sty.rootprintedPapers_nvs]: hasVariant(
-              $state,
-              "printedPapers",
-              "nvs"
-            )
-          }
-        )}
+        data-plasmic-name={"printedArea"}
+        data-plasmic-override={overrides.printedArea}
+        className={classNames(projectcss.all, sty.printedArea, {
+          [sty.printedAreaprintedPapers_leggedLocomotion]: hasVariant(
+            $state,
+            "printedPapers",
+            "leggedLocomotion"
+          ),
+          [sty.printedAreaprintedPapers_nvs]: hasVariant(
+            $state,
+            "printedPapers",
+            "nvs"
+          )
+        })}
       >
-        <p.PlasmicImg
-          data-plasmic-name={"printer"}
-          data-plasmic-override={overrides.printer}
-          alt={""}
-          className={classNames(sty.printer, {
-            [sty.printerprintedPapers_leggedLocomotion]: hasVariant(
-              $state,
-              "printedPapers",
-              "leggedLocomotion"
-            ),
-            [sty.printerprintedPapers_nvs]: hasVariant(
-              $state,
-              "printedPapers",
-              "nvs"
-            )
-          })}
-          displayHeight={
-            hasVariant(globalVariants, "screen", "mobileOnly")
-              ? ("158px" as const)
-              : hasVariant(globalVariants, "screen", "laptop")
-              ? ("auto" as const)
-              : ("100%" as const)
-          }
-          displayMaxHeight={"none" as const}
-          displayMaxWidth={"100%" as const}
-          displayMinHeight={"0" as const}
-          displayMinWidth={"0" as const}
-          displayWidth={
-            hasVariant(globalVariants, "screen", "mobileOnly")
-              ? ("320px" as const)
-              : hasVariant(globalVariants, "screen", "laptop")
-              ? ("100%" as const)
-              : ("100%" as const)
-          }
-          loading={"lazy" as const}
-          src={{
-            src: imageRqSlXdSwk,
-            fullWidth: 299,
-            fullHeight: 150,
-            aspectRatio: 1.995146
-          }}
-        />
-
-        <Paper1Button
-          data-plasmic-name={"nvsButton"}
-          data-plasmic-override={overrides.nvsButton}
-          className={classNames("__wab_instance", sty.nvsButton, {
-            [sty.nvsButtonprintedPapers_nvs]: hasVariant(
-              $state,
-              "printedPapers",
-              "nvs"
-            )
-          })}
-          onPress={async event => {
-            const $steps = {};
-            $steps["updatePrintedPapers"] = true
-              ? (() => {
-                  const actionArgs = {
-                    vgroup: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "-AmJn4AXH",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "vgroup"
-                      },
-                      () => "printedPapers"
-                    ),
-                    operation: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "-AmJn4AXH",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "operation"
-                      },
-                      () => 0
-                    ),
-                    value: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "-AmJn4AXH",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "value"
-                      },
-                      () => "nvs"
-                    )
-                  };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "updateVariant",
-                      interactionUuid: "-AmJn4AXH",
-                      componentUuid: "ktUZWyedPGv"
-                    },
-                    () =>
-                      (({ vgroup, value }) => {
-                        if (typeof value === "string") {
-                          value = [value];
-                        }
-
-                        p.set($state, vgroup, value);
-                        return value;
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
-                })()
-              : undefined;
-            if (
-              typeof $steps["updatePrintedPapers"] === "object" &&
-              typeof $steps["updatePrintedPapers"].then === "function"
-            ) {
-              $steps["updatePrintedPapers"] = await __wrapUserPromise(
-                {
-                  type: "InteractionLoc",
-                  actionName: "updateVariant",
-                  interactionUuid: "-AmJn4AXH",
-                  componentUuid: "ktUZWyedPGv"
-                },
-                $steps["updatePrintedPapers"]
-              );
-            }
-            $steps["updateArxivLink"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "qAvD7dZwE",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "variable"
-                      },
-                      () => ({
-                        objRoot: $state,
-                        variablePath: ["arxivLink"]
-                      })
-                    ),
-                    operation: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "qAvD7dZwE",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "operation"
-                      },
-                      () => 0
-                    ),
-                    value: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "qAvD7dZwE",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "value"
-                      },
-                      () => "https://arxiv.org/abs/2308.14108"
-                    )
-                  };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "updateVariable",
-                      interactionUuid: "qAvD7dZwE",
-                      componentUuid: "ktUZWyedPGv"
-                    },
-                    () =>
-                      (({ variable, value, startIndex, deleteCount }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        p.set(objRoot, variablePath, value);
-                        return value;
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
-                })()
-              : undefined;
-            if (
-              typeof $steps["updateArxivLink"] === "object" &&
-              typeof $steps["updateArxivLink"].then === "function"
-            ) {
-              $steps["updateArxivLink"] = await __wrapUserPromise(
-                {
-                  type: "InteractionLoc",
-                  actionName: "updateVariable",
-                  interactionUuid: "qAvD7dZwE",
-                  componentUuid: "ktUZWyedPGv"
-                },
-                $steps["updateArxivLink"]
-              );
-            }
-          }}
-        />
-
-        <Paper2Button
-          data-plasmic-name={"legButton"}
-          data-plasmic-override={overrides.legButton}
-          className={classNames("__wab_instance", sty.legButton, {
-            [sty.legButtonprintedPapers_leggedLocomotion]: hasVariant(
-              $state,
-              "printedPapers",
-              "leggedLocomotion"
-            ),
-            [sty.legButtonprintedPapers_nvs]: hasVariant(
-              $state,
-              "printedPapers",
-              "nvs"
-            )
-          })}
-          onPress={async event => {
-            const $steps = {};
-            $steps["updatePrintedPapers"] = true
-              ? (() => {
-                  const actionArgs = {
-                    vgroup: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "uqHFMzs7a",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "vgroup"
-                      },
-                      () => "printedPapers"
-                    ),
-                    operation: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "uqHFMzs7a",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "operation"
-                      },
-                      () => 0
-                    ),
-                    value: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "uqHFMzs7a",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "value"
-                      },
-                      () => "leggedLocomotion"
-                    )
-                  };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "updateVariant",
-                      interactionUuid: "uqHFMzs7a",
-                      componentUuid: "ktUZWyedPGv"
-                    },
-                    () =>
-                      (({ vgroup, value }) => {
-                        if (typeof value === "string") {
-                          value = [value];
-                        }
-
-                        p.set($state, vgroup, value);
-                        return value;
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
-                })()
-              : undefined;
-            if (
-              typeof $steps["updatePrintedPapers"] === "object" &&
-              typeof $steps["updatePrintedPapers"].then === "function"
-            ) {
-              $steps["updatePrintedPapers"] = await __wrapUserPromise(
-                {
-                  type: "InteractionLoc",
-                  actionName: "updateVariant",
-                  interactionUuid: "uqHFMzs7a",
-                  componentUuid: "ktUZWyedPGv"
-                },
-                $steps["updatePrintedPapers"]
-              );
-            }
-            $steps["updateArxivLink"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "qDPunBDgu",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "variable"
-                      },
-                      () => ({
-                        objRoot: $state,
-                        variablePath: ["arxivLink"]
-                      })
-                    ),
-                    operation: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "qDPunBDgu",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "operation"
-                      },
-                      () => 1
-                    )
-                  };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "updateVariable",
-                      interactionUuid: "qDPunBDgu",
-                      componentUuid: "ktUZWyedPGv"
-                    },
-                    () =>
-                      (({ variable, value, startIndex, deleteCount }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        p.set(objRoot, variablePath, undefined);
-                        return undefined;
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
-                })()
-              : undefined;
-            if (
-              typeof $steps["updateArxivLink"] === "object" &&
-              typeof $steps["updateArxivLink"].then === "function"
-            ) {
-              $steps["updateArxivLink"] = await __wrapUserPromise(
-                {
-                  type: "InteractionLoc",
-                  actionName: "updateVariable",
-                  interactionUuid: "qDPunBDgu",
-                  componentUuid: "ktUZWyedPGv"
-                },
-                $steps["updateArxivLink"]
-              );
-            }
-          }}
-        />
-
-        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
-          <p.PlasmicImg
-            data-plasmic-name={"longerSheet"}
-            data-plasmic-override={overrides.longerSheet}
-            alt={""}
-            className={classNames(sty.longerSheet)}
-            displayHeight={"102px" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"100%" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"auto" as const}
-            loading={"lazy" as const}
-            src={{
-              src: image10Beg4PkDLy,
-              fullWidth: 300,
-              fullHeight: 139,
-              aspectRatio: 2.152174
-            }}
-          />
-        ) : null}
-        {true ? (
-          <div
-            data-plasmic-name={"printedArea"}
-            data-plasmic-override={overrides.printedArea}
-            className={classNames(projectcss.all, sty.printedArea, {
-              [sty.printedAreaprintedPapers_leggedLocomotion]: hasVariant(
+        <div
+          data-plasmic-name={"text"}
+          data-plasmic-override={overrides.text}
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text,
+            {
+              [sty.textprintedPapers_leggedLocomotion]: hasVariant(
                 $state,
                 "printedPapers",
                 "leggedLocomotion"
               ),
-              [sty.printedAreaprintedPapers_nvs]: hasVariant(
+              [sty.textprintedPapers_nvs]: hasVariant(
+                $state,
+                "printedPapers",
+                "nvs"
+              )
+            }
+          )}
+        >
+          {hasVariant($state, "printedPapers", "leggedLocomotion")
+            ? "Towards Continual RL for Quadruped Robots"
+            : hasVariant($state, "printedPapers", "nvs")
+            ? "Depth self-supervision for single image novel view synthesis"
+            : ""}
+        </div>
+        <a
+          data-plasmic-name={"link"}
+          data-plasmic-override={overrides.link}
+          className={classNames(projectcss.all, projectcss.a, sty.link, {
+            [sty.linkprintedPapers_leggedLocomotion]: hasVariant(
+              $state,
+              "printedPapers",
+              "leggedLocomotion"
+            ),
+            [sty.linkprintedPapers_nvs]: hasVariant(
+              $state,
+              "printedPapers",
+              "nvs"
+            )
+          })}
+          href={(() => {
+            try {
+              return $state.arxivLink;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return `/`;
+              }
+              throw e;
+            }
+          })()}
+          onClick={async event => {
+            const $steps = {};
+          }}
+          target={"_blank"}
+        >
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img__iLex, {
+              [sty.imgprintedPapers_nvs__iLexbI3X]: hasVariant(
                 $state,
                 "printedPapers",
                 "nvs"
               )
             })}
-          >
-            {(
-              hasVariant($state, "printedPapers", "leggedLocomotion")
-                ? true
-                : hasVariant($state, "printedPapers", "nvs")
-                ? true
-                : true
-            ) ? (
-              <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text,
-                  {
-                    [sty.textprintedPapers_leggedLocomotion]: hasVariant(
-                      $state,
-                      "printedPapers",
-                      "leggedLocomotion"
-                    ),
-                    [sty.textprintedPapers_nvs]: hasVariant(
-                      $state,
-                      "printedPapers",
-                      "nvs"
-                    )
-                  }
-                )}
-              >
-                {hasVariant($state, "printedPapers", "leggedLocomotion")
-                  ? "Towards Continual RL for Quadruped Robots"
-                  : hasVariant($state, "printedPapers", "nvs")
-                  ? "Depth self-supervision for single image novel view synthesis"
-                  : ""}
-              </div>
-            ) : null}
-            {(
-              hasVariant($state, "printedPapers", "nvs")
-                ? true
-                : hasVariant(globalVariants, "screen", "mobileOnly")
-                ? true
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : hasVariant(globalVariants, "screen", "laptop")
-                ? true
-                : true
-            ) ? (
-              <a
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(projectcss.all, projectcss.a, sty.link, {
-                  [sty.linkprintedPapers_leggedLocomotion]: hasVariant(
-                    $state,
-                    "printedPapers",
-                    "leggedLocomotion"
-                  ),
-                  [sty.linkprintedPapers_nvs]: hasVariant(
-                    $state,
-                    "printedPapers",
-                    "nvs"
-                  )
-                })}
-                href={(() => {
-                  try {
-                    return $state.arxivLink;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return `/`;
-                    }
-                    throw e;
-                  }
-                })()}
-                onClick={async event => {
-                  const $steps = {};
-                }}
-                target={"_blank" as const}
-              >
-                {(
-                  hasVariant($state, "printedPapers", "nvs")
-                    ? true
-                    : hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? true
-                    : hasVariant(globalVariants, "screen", "laptop")
-                    ? true
-                    : true
-                ) ? (
-                  <p.PlasmicImg
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
-                    alt={""}
-                    className={classNames(sty.img, {
-                      [sty.imgprintedPapers_nvs]: hasVariant(
-                        $state,
-                        "printedPapers",
-                        "nvs"
-                      )
-                    })}
-                    displayHeight={"100%" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"100%" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: image8TwfgTt7W,
-                      fullWidth: 300,
-                      fullHeight: 135,
-                      aspectRatio: 2.222644
-                    }}
-                  />
-                ) : null}
-              </a>
-            ) : null}
-          </div>
-        ) : null}
-        <div
-          data-plasmic-name={"sheetWheel"}
-          data-plasmic-override={overrides.sheetWheel}
-          className={classNames(projectcss.all, sty.sheetWheel)}
+            displayHeight={"100%"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"100%"}
+            loading={"lazy"}
+            src={{
+              src: image8TwfgTt7W,
+              fullWidth: 300,
+              fullHeight: 135,
+              aspectRatio: 2.222644
+            }}
+          />
+        </a>
+        <a
+          data-plasmic-name={"conf"}
+          data-plasmic-override={overrides.conf}
+          className={classNames(projectcss.all, projectcss.a, sty.conf, {
+            [sty.confprintedPapers_leggedLocomotion]: hasVariant(
+              $state,
+              "printedPapers",
+              "leggedLocomotion"
+            ),
+            [sty.confprintedPapers_nvs]: hasVariant(
+              $state,
+              "printedPapers",
+              "nvs"
+            )
+          })}
+          href={(() => {
+            try {
+              return $state.arxivLink;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return `/`;
+              }
+              throw e;
+            }
+          })()}
           onClick={async event => {
             const $steps = {};
-            $steps["updatePrintedPapers"] = true
-              ? (() => {
-                  const actionArgs = {
-                    vgroup: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "gbX1k5tF-",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "vgroup"
-                      },
-                      () => "printedPapers"
-                    ),
-                    operation: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "gbX1k5tF-",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "operation"
-                      },
-                      () => 0
-                    ),
-                    value: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "gbX1k5tF-",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "value"
-                      },
-                      () => []
-                    )
-                  };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "updateVariant",
-                      interactionUuid: "gbX1k5tF-",
-                      componentUuid: "ktUZWyedPGv"
-                    },
-                    () =>
-                      (({ vgroup, value }) => {
-                        if (typeof value === "string") {
-                          value = [value];
-                        }
-
-                        p.set($state, vgroup, value);
-                        return value;
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
-                })()
-              : undefined;
-            if (
-              typeof $steps["updatePrintedPapers"] === "object" &&
-              typeof $steps["updatePrintedPapers"].then === "function"
-            ) {
-              $steps["updatePrintedPapers"] = await __wrapUserPromise(
-                {
-                  type: "InteractionLoc",
-                  actionName: "updateVariant",
-                  interactionUuid: "gbX1k5tF-",
-                  componentUuid: "ktUZWyedPGv"
-                },
-                $steps["updatePrintedPapers"]
-              );
-            }
-            $steps["updateArxivLink"] = true
-              ? (() => {
-                  const actionArgs = {
-                    variable: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "KYL5MrhvC",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "variable"
-                      },
-                      () => ({
-                        objRoot: $state,
-                        variablePath: ["arxivLink"]
-                      })
-                    ),
-                    operation: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "updateVariable",
-                        interactionUuid: "KYL5MrhvC",
-                        componentUuid: "ktUZWyedPGv",
-                        argName: "operation"
-                      },
-                      () => 1
-                    )
-                  };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "updateVariable",
-                      interactionUuid: "KYL5MrhvC",
-                      componentUuid: "ktUZWyedPGv"
-                    },
-                    () =>
-                      (({ variable, value, startIndex, deleteCount }) => {
-                        if (!variable) {
-                          return;
-                        }
-                        const { objRoot, variablePath } = variable;
-
-                        p.set(objRoot, variablePath, undefined);
-                        return undefined;
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
-                })()
-              : undefined;
-            if (
-              typeof $steps["updateArxivLink"] === "object" &&
-              typeof $steps["updateArxivLink"].then === "function"
-            ) {
-              $steps["updateArxivLink"] = await __wrapUserPromise(
-                {
-                  type: "InteractionLoc",
-                  actionName: "updateVariable",
-                  interactionUuid: "KYL5MrhvC",
-                  componentUuid: "ktUZWyedPGv"
-                },
-                $steps["updateArxivLink"]
-              );
-            }
           }}
-        />
+          target={"_blank"}
+        >
+          <PlasmicImg__
+            alt={""}
+            className={classNames(sty.img___6Sane, {
+              [sty.imgprintedPapers_leggedLocomotion___6SaneNqIl]: hasVariant(
+                $state,
+                "printedPapers",
+                "leggedLocomotion"
+              ),
+              [sty.imgprintedPapers_nvs___6SanebI3X]: hasVariant(
+                $state,
+                "printedPapers",
+                "nvs"
+              )
+            })}
+            displayHeight={
+              hasVariant($state, "printedPapers", "leggedLocomotion")
+                ? "12px"
+                : "31px"
+            }
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"100%"}
+            loading={"lazy"}
+            src={
+              hasVariant($state, "printedPapers", "leggedLocomotion")
+                ? {
+                    src: imet23PngDrDtl7NfwIjZ,
+                    fullWidth: 162,
+                    fullHeight: 39,
+                    aspectRatio: undefined
+                  }
+                : {
+                    src: iros23PngFoCZosGEstay,
+                    fullWidth: 120,
+                    fullHeight: 114,
+                    aspectRatio: undefined
+                  }
+            }
+          />
+        </a>
       </div>
-    ) : null
+      <div
+        data-plasmic-name={"sheetWheel"}
+        data-plasmic-override={overrides.sheetWheel}
+        className={classNames(projectcss.all, sty.sheetWheel)}
+        onClick={async event => {
+          const $steps = {};
+
+          $steps["updatePrintedPapers"] = true
+            ? (() => {
+                const actionArgs = {
+                  vgroup: "printedPapers",
+                  operation: 0,
+                  value: []
+                };
+                return (({ vgroup, value }) => {
+                  if (typeof value === "string") {
+                    value = [value];
+                  }
+
+                  $stateSet($state, vgroup, value);
+                  return value;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updatePrintedPapers"] != null &&
+            typeof $steps["updatePrintedPapers"] === "object" &&
+            typeof $steps["updatePrintedPapers"].then === "function"
+          ) {
+            $steps["updatePrintedPapers"] = await $steps["updatePrintedPapers"];
+          }
+
+          $steps["updateArxivLink"] = true
+            ? (() => {
+                const actionArgs = {
+                  variable: {
+                    objRoot: $state,
+                    variablePath: ["arxivLink"]
+                  },
+                  operation: 1
+                };
+                return (({ variable, value, startIndex, deleteCount }) => {
+                  if (!variable) {
+                    return;
+                  }
+                  const { objRoot, variablePath } = variable;
+
+                  $stateSet(objRoot, variablePath, undefined);
+                  return undefined;
+                })?.apply(null, [actionArgs]);
+              })()
+            : undefined;
+          if (
+            $steps["updateArxivLink"] != null &&
+            typeof $steps["updateArxivLink"] === "object" &&
+            typeof $steps["updateArxivLink"].then === "function"
+          ) {
+            $steps["updateArxivLink"] = await $steps["updateArxivLink"];
+          }
+        }}
+      />
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -828,32 +645,32 @@ const PlasmicDescendants = {
     "printedArea",
     "text",
     "link",
-    "img",
+    "conf",
     "sheetWheel"
   ],
   printer: ["printer"],
   nvsButton: ["nvsButton"],
   legButton: ["legButton"],
   longerSheet: ["longerSheet"],
-  printedArea: ["printedArea", "text", "link", "img"],
+  printedArea: ["printedArea", "text", "link", "conf"],
   text: ["text"],
-  link: ["link", "img"],
-  img: ["img"],
+  link: ["link"],
+  conf: ["conf"],
   sheetWheel: ["sheetWheel"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  printer: typeof p.PlasmicImg;
+  printer: typeof PlasmicImg__;
   nvsButton: typeof Paper1Button;
   legButton: typeof Paper2Button;
-  longerSheet: typeof p.PlasmicImg;
+  longerSheet: typeof PlasmicImg__;
   printedArea: "div";
   text: "div";
   link: "a";
-  img: typeof p.PlasmicImg;
+  conf: "a";
   sheetWheel: "div";
 };
 
@@ -891,7 +708,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicPrinter__ArgProps,
           internalVariantPropNames: PlasmicPrinter__VariantProps
         }),
@@ -924,7 +741,7 @@ export const PlasmicPrinter = Object.assign(
     printedArea: makeNodeComponent("printedArea"),
     text: makeNodeComponent("text"),
     link: makeNodeComponent("link"),
-    img: makeNodeComponent("img"),
+    conf: makeNodeComponent("conf"),
     sheetWheel: makeNodeComponent("sheetWheel"),
 
     // Metadata about props expected for PlasmicPrinter

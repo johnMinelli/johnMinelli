@@ -40,7 +40,8 @@
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
       ],
-      "jsBundleThemes": []
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     },
     {
       "projectId": "szjgMQpPpxhmkjnaBvZQJG",
@@ -61,7 +62,8 @@
           "componentImportPath": "@plasmicpkgs/react-parallax-tilt"
         }
       ],
-      "jsBundleThemes": []
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     },
     {
       "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
@@ -159,6 +161,19 @@
             "modulePath": "Paper1Button.tsx"
           },
           "cssFilePath": "plasmic/john_minelli_page/PlasmicPaper1Button.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Ckf923Zffah2",
+          "name": "Back",
+          "type": "managed",
+          "projectId": "sJW2SjvbA4LuFhHrBsyfEH",
+          "renderModuleFilePath": "plasmic/john_minelli_page/PlasmicBack.tsx",
+          "importSpec": {
+            "modulePath": "Back.tsx"
+          },
+          "cssFilePath": "plasmic/john_minelli_page/PlasmicBack.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -298,6 +313,86 @@
           "id": "7EoLVG_kCR",
           "name": "Line44Icon",
           "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Line44.tsx"
+        },
+        {
+          "id": "Vi77P5AFHha3",
+          "name": "Rectangle68Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle68.tsx"
+        },
+        {
+          "id": "Rj1W67Yp9-SQ",
+          "name": "Rectangle69Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle69.tsx"
+        },
+        {
+          "id": "4IykqgP-4Fgc",
+          "name": "Rectangle70Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle70.tsx"
+        },
+        {
+          "id": "pjfuhtn_6VI8",
+          "name": "Rectangle71Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle71.tsx"
+        },
+        {
+          "id": "L9kIMTw0lICy",
+          "name": "Rectangle72Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle72.tsx"
+        },
+        {
+          "id": "Q0Gk8JUhq6Ud",
+          "name": "Rectangle73Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle73.tsx"
+        },
+        {
+          "id": "OJTypToMvZ4Z",
+          "name": "Rectangle74Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle74.tsx"
+        },
+        {
+          "id": "LsxIH4AyeMAZ",
+          "name": "Rectangle75Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle75.tsx"
+        },
+        {
+          "id": "LiwdHiXkx0hS",
+          "name": "Rectangle76Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle76.tsx"
+        },
+        {
+          "id": "cy3NPPaLrf7J",
+          "name": "Rectangle77Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle77.tsx"
+        },
+        {
+          "id": "PYYArtdUr8o1",
+          "name": "Rectangle78Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle78.tsx"
+        },
+        {
+          "id": "oSyitAU6uZQE",
+          "name": "Rectangle79Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle79.tsx"
+        },
+        {
+          "id": "Iu66fmOGX9jC",
+          "name": "Rectangle80Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle80.tsx"
+        },
+        {
+          "id": "CPpQh0S9Ts0o",
+          "name": "Rectangle81Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle81.tsx"
+        },
+        {
+          "id": "DF487lolQ69u",
+          "name": "Rectangle82Icon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__Rectangle82.tsx"
+        },
+        {
+          "id": "HNBJM98fZ7O1",
+          "name": "XLogo2023OriginalsvgIcon",
+          "moduleFilePath": "plasmic/john_minelli_page/icons/PlasmicIcon__XLogo2023Originalsvg.tsx"
         }
       ],
       "images": [
@@ -395,6 +490,21 @@
           "id": "fTwf5-1Q1",
           "name": "Eye1 6",
           "filePath": "plasmic/john_minelli_page/images/eye16.svg"
+        },
+        {
+          "id": "foCZosGEstay",
+          "name": "IROS23.png",
+          "filePath": "plasmic/john_minelli_page/images/iros23Png.png"
+        },
+        {
+          "id": "drDtl7nfwIjZ",
+          "name": "IMET23.png",
+          "filePath": "plasmic/john_minelli_page/images/imet23Png.png"
+        },
+        {
+          "id": "cMAjcCVcPwpE",
+          "name": "AdobeStock_86368293_Preview.jpeg",
+          "filePath": "plasmic/john_minelli_page/images/adobeStock86368293Previewjpeg.jpg"
         }
       ],
       "indirect": false,
@@ -412,7 +522,9 @@
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
-      ]
+      ],
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     },
     {
       "projectId": "2vr9hQFY2mN9rEqhWxcPmu",
@@ -445,7 +557,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-content-stack"
         }
       ],
-      "jsBundleThemes": []
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     }
   ],
   "globalVariants": {
@@ -459,6 +572,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.307",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.307/dist/plasmic.schema.json"
+  "cliVersion": "0.1.327",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.327/dist/plasmic.schema.json"
 }
