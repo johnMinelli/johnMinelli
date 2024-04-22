@@ -474,7 +474,7 @@ function PlasmicHome__RenderFunc(props: {
                   </span>
                   <React.Fragment>
                     {
-                      " - Intern researcher in Learning Agents and Robots (LEAR) Team @CYENS (Nicosia, CY) "
+                      " - Intern researcher in LEAR (Learning Agents and Robots) Team @CYENS (Nicosia, CY) "
                     }
                   </React.Fragment>
                 </React.Fragment>
@@ -543,7 +543,7 @@ function PlasmicHome__RenderFunc(props: {
                   </span>
                   <React.Fragment>
                     {
-                      " - Started Master degree in Artificial Intelligence at University of Bologna"
+                      " - Started Master degree in Artificial Intelligence @University of Bologna"
                     }
                   </React.Fragment>
                 </React.Fragment>
