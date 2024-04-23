@@ -1,18 +1,18 @@
 ### Hi there 👋
 I'm Giovanni Minelli, welcome to my GitHub page!
 
-I'm a software developer with a passion for coding and exploring new technologies. I recently graduated with a master's degree in Artificial Intelligence at the University of Bologna, with a specific focus on Machine Vision and Reinforcement Learning.
+I'm a software developer with a passion for coding and exploring new technologies. I recently graduated with a master's degree in Artificial Intelligence from the University of Bologna, specializing in Machine Vision and Reinforcement Learning.
 
-My interest in AI research extends to the study of multijoint embedding space, perception and vision applied to robotics. I find the field fascinating, also for their connections with neuroscience and I'm looking forward to explore and contribute to its development.
+My interest in AI research extends to the study of multi-joint embedding spaces, perception, and vision applied to robotics. I find this field fascinating, particularly its connections with neuroscience, and I'm eager to explore and contribute to its development.
 
-I also try to keep up with research by participating in ML reading groups and contributing to opensource communities such as [RL communities](https://farama.org/).
-You can find my works here or on [johnminelli.it](https://johnminelli.it) in a tidier format.
+I strive to stay updated with research by participating in ML reading groups and contributing to open-source communities such as [RL community](https://farama.org/).
+You can find my works here or on [johnminelli.it](https://johnminelli.it) presented in a more organized format.
 
 <!-- [![johnMinelli's github stats](https://github-readme-stats.vercel.app/api?username=johnMinelli&count_private=true)](https://github.com/anuraghazra/github-readme-stats) -->
 
 ## Get to know me better:
-I've always been told to learn different things because you never know when they might come in handy, so I've gained some experience in many topics and I think this is very helpful in being more flexible in life and in the tech world.
-Over the years I experienced the field of mechanical industry with CNC machines 2.5/3 axes, electrical hobby including components soldering, and play around with Arduino/Adafruit/Raspberry (check out my repositories on IoT, those are part of my thesis for which I collaborated with an Eclipse foundation development team (y)). I found myself very interested in 3D modeling with even basic experiments in Unity3D. Crypto/blockchain follower (just the technology behind it) since early 2016 and supporter of decentralized opensource solutions.
+I've always been encouraged to learn diverse subjects because you never know when that knowledge might prove useful. As a result, I've gained experience across many topics, which I believe has made me more adaptable in life and the tech world.
+Over the years, I've worked in the mechanical industry with 2.5/3-axis CNC machines and explored electrical hobbies, including component soldering. I've also tinkered with Arduino, Adafruit, and Raspberry Pi (check out my IoT repositories, which were part of my thesis project where I collaborated with an Eclipse Foundation development team). I've developed a keen interest in 3D modeling, even experimenting with Unity3D. Additionally, I've been following crypto/blockchain technology (not for investment purposes) since early 2016 and support decentralized, open-source solutions.
 
 I really like the hardware and the architectural side of a computer but being the code development more accessible and straightforward for a kid I embraced this world where elegance and order reigns (...okay, we all try at our best 🙂).\
 Just to name a few languages (of the many I've experimented with) I really enjoy writing mobile apps in **Kotlin** but today I'm fully deep into Machine Learning and AI integrations in **Python** (Keras, TF, Pytorch, Numpy, Scikit-Learn, OpenCV, ...).
